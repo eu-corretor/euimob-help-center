@@ -1,0 +1,41 @@
+---
+title: "Central de Ajuda EuImob"
+description: "Guias passo a passo e vídeos para quem usa a plataforma EuImob."
+template: splash
+hero:
+  title: Como podemos ajudar?
+  tagline: Guias curtos, com o sistema aberto do lado. Cada guia é uma tarefa; cada vídeo, um guia.
+  actions:
+    - text: Sou gestor
+      link: /trilhas/gestor/
+      icon: right-arrow
+      variant: primary
+    - text: Sou corretor
+      link: /trilhas/corretor/
+      icon: right-arrow
+      variant: secondary
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Por onde começar
+
+<CardGrid>
+  <LinkCard title="Montando minha imobiliária" description="Da contratação ao site no ar: a trilha do gestor." href="/trilhas/gestor/" />
+  <LinkCard title="Meu primeiro dia" description="Contato, imóvel, cliente, visita e proposta: a trilha do corretor." href="/trilhas/corretor/" />
+</CardGrid>
+
+## Por assunto
+
+<CardGrid>
+  <LinkCard title="Conta e acesso" description="Equipe, perfis de acesso, plano, créditos de IA." href="/conta/convidar-um-usuario/" />
+  <LinkCard title="Contatos" description="Pessoas, empresas, proprietários e clientes." href="/contatos/cadastrar-um-contato/" />
+  <LinkCard title="Imóveis" description="Cadastro, fotos, publicação e condomínios." href="/imoveis/cadastrar-um-imovel/" />
+  <LinkCard title="CRM" description="Pipeline, atividades, visitas e propostas." href="/crm/cadastrar-um-cliente-no-pipeline/" />
+  <LinkCard title="Financeiro" description="Comissão, rateio e cobranças." href="/financeiro/faturar-a-comissao/" />
+  <LinkCard title="IA" description="A Clara e o assistente virtual de atendimento." href="/ia/tirar-duvidas-com-a-clara/" />
+</CardGrid>
+
+<Card title="Não achou?" icon="comment">
+  Pergunte à Clara dentro do sistema (Conversas → Clara). Ela responde com base nestes guias e, quando não sabe, registra a dúvida para a equipe documentar.
+</Card>

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.DS_Store
+npm-debug.log*
+# Gerados no build a partir de src/content (nunca editar à mão)
+public/corpus/
+public/index.json
+.wrangler/

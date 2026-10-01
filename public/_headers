@@ -1,0 +1,25 @@
+# Cabeçalhos dos assets estáticos (Cloudflare Workers).
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# O corpus e o index.json são lidos de outros domínios
+# (o cron da Clara e o botão "?" dentro da plataforma).
+/corpus/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/index.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/interno/*
+  X-Robots-Tag: noindex
+
+# Política recomendada pelo Sveltia CMS para o backend GitHub
+# (https://sveltiacms.app/en/docs/security).
+/admin/*
+  X-Robots-Tag: noindex
+  Content-Security-Policy: script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' blob: data: https://*.githubusercontent.com; media-src blob:; frame-src blob:; connect-src 'self' blob: data: https://unpkg.com https://api.github.com https://www.githubstatus.com; manifest-src blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'

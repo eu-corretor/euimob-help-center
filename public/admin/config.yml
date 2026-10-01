@@ -1,0 +1,128 @@
+# Editor visual da central (Sveltia CMS, configuração no formato Decap).
+# Quem edita loga com a própria conta do GitHub, colaboradora deste repositório.
+backend:
+  name: github
+  repo: eu-corretor/euimob-help-center
+  branch: main
+  # O repositório é público: o login pede acesso só a repositórios públicos.
+  auth_scope: public_repo
+  # Worker de OAuth (sveltia-cms-auth) — ver interno/como-usar-o-editor.md
+  base_url: https://ajuda-auth.euimob.com.br
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+# Rascunho → Em revisão → Pronto → Publicar. Nada vai ao ar pela metade.
+publish_mode: editorial_workflow
+
+locale: pt
+site_url: https://ajuda.euimob.com.br
+display_url: https://ajuda.euimob.com.br
+media_folder: public/imagens
+public_folder: /imagens
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+_secoes: &secoes
+  - { label: "Trilhas", value: trilhas }
+  - { label: "Conta e acesso", value: conta }
+  - { label: "Início", value: inicio }
+  - { label: "Contatos", value: contatos }
+  - { label: "Imóveis", value: imoveis }
+  - { label: "CRM", value: crm }
+  - { label: "Financeiro", value: financeiro }
+  - { label: "Locação", value: locacao }
+  - { label: "Site", value: site }
+  - { label: "WhatsApp", value: whatsapp }
+  - { label: "Redes Sociais", value: redes-sociais }
+  - { label: "Assinatura Eletrônica", value: assinatura-eletronica }
+  - { label: "Integrações", value: integracoes }
+  - { label: "IA", value: ia }
+  - { label: "Migração", value: migracao }
+
+collections:
+  - name: guias
+    label: Guias
+    label_singular: Guia
+    folder: src/content/docs
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 2
+      summary: "{{title}}"
+    meta:
+      path:
+        widget: string
+        label: "Caminho (seção/nome-do-guia, sem acento)"
+        index_file: index
+    summary: "{{title}}"
+    sortable_fields: [title, verificado_em]
+    fields:
+      - { name: title, label: Título, widget: string }
+      - { name: description, label: "Descrição curta (busca e redes)", widget: string, required: false }
+      - { name: secao, label: Seção, widget: select, options: *secoes }
+      - name: telas
+        label: "Telas em que este guia aparece no botão ? (path da ação: imoveis, pipeline, conversas-whatsapp…)"
+        widget: list
+        required: false
+        field: { name: tela, label: Path, widget: string }
+      - name: quem
+        label: "Para quem"
+        widget: select
+        multiple: true
+        options:
+          - { label: Gestor, value: gestor }
+          - { label: Corretor, value: corretor }
+          - { label: Financeiro, value: financeiro }
+      - { name: funcionalidade, label: "Funcionalidade contratada (código)", widget: string, required: false }
+      - name: video
+        label: "Vídeo (slug em Vídeos)"
+        widget: relation
+        collection: videos
+        value_field: "{{slug}}"
+        search_fields: ["{{slug}}"]
+        required: false
+      - { name: verificado_em, label: "Verificado em", widget: datetime, format: "YYYY-MM-DD", time_format: false, date_format: "DD/MM/YYYY" }
+      - { name: versao_sistema, label: "Versão do sistema", widget: string, required: false }
+      - { name: trilha, label: "É uma trilha", widget: boolean, default: false, required: false }
+      - { name: draft, label: "Rascunho (não publica nem vai para a Clara)", widget: boolean, default: false, required: false }
+      - { name: body, label: Conteúdo, widget: markdown }
+
+  - name: videos
+    label: Vídeos
+    label_singular: Vídeo
+    folder: src/content/videos
+    create: true
+    extension: yaml
+    format: yaml
+    identifier_field: youtube_id
+    summary: "{{slug}} · {{duracao}}"
+    fields:
+      - { name: youtube_id, label: "ID do vídeo no YouTube (o que vem depois de v=)", widget: string }
+      - { name: duracao, label: "Duração (mm:ss)", widget: string, pattern: ["^\\d{1,2}:\\d{2}$", "use mm:ss"] }
+      - { name: verificado_em, label: "Verificado em", widget: datetime, format: "YYYY-MM-DD", time_format: false, date_format: "DD/MM/YYYY" }
+      - name: capitulos
+        label: "Capítulos (os mesmos da descrição no YouTube)"
+        widget: list
+        min: 1
+        fields:
+          - { name: t, label: "Tempo (mm:ss)", widget: string, pattern: ["^\\d{1,2}:\\d{2}$", "use mm:ss"] }
+          - { name: assunto, label: Assunto, widget: string }
+
+  - name: transcricoes
+    label: Transcrições
+    label_singular: Transcrição
+    folder: src/content/transcricoes
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: video, label: "Vídeo (slug)", widget: relation, collection: videos, value_field: "{{slug}}", search_fields: ["{{slug}}"] }
+      - { name: revisada, label: "Transcrição revisada por uma pessoa", widget: boolean, default: false }
+      - { name: body, label: "Transcrição com timestamps", widget: markdown }

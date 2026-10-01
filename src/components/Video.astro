@@ -1,0 +1,65 @@
+---
+/**
+ * Vídeo de um guia: player do YouTube + capítulos clicáveis.
+ * `?t=<segundos>` na URL (é assim que a Clara aponta "vá ao minuto 2:40")
+ * inicia o vídeo naquele ponto; clicar num capítulo faz o mesmo.
+ */
+import { getEntry } from "astro:content";
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const video = await getEntry("videos", slug);
+if (!video) {
+  throw new Error(`O guia cita o vídeo "${slug}", mas não existe src/content/videos/${slug}.yaml`);
+}
+const { youtube_id, duracao, capitulos } = video.data;
+const toSeconds = (t: string) => t.split(":").reduce((acc, part) => acc * 60 + Number(part), 0);
+const embed = `https://www.youtube-nocookie.com/embed/${youtube_id}?rel=0`;
+---
+
+<div class="eu-video" data-embed={embed}>
+  <div class="eu-video__frame">
+    <iframe
+      src={embed}
+      title="Vídeo do guia"
+      allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+  <p class="eu-video__meta">Vídeo · {duracao}</p>
+  <ol class="eu-video__chapters">
+    {capitulos.map((c) => (
+      <li>
+        <a href={`?t=${toSeconds(c.t)}`} data-t={toSeconds(c.t)}>{c.t}</a>
+        {c.assunto}
+      </li>
+    ))}
+  </ol>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>(".eu-video");
+  const frame = root?.querySelector("iframe");
+  if (root && frame) {
+    const seek = (seconds: number, autoplay: boolean) => {
+      frame.src = `${root.dataset.embed}&start=${seconds}${autoplay ? "&autoplay=1" : ""}`;
+    };
+    const t = Number(new URLSearchParams(location.search).get("t"));
+    if (t > 0) {
+      seek(t, true);
+      root.scrollIntoView({ block: "center" });
+    }
+    root.querySelectorAll<HTMLAnchorElement>(".eu-video__chapters a").forEach((a) => {
+      a.addEventListener("click", (event) => {
+        event.preventDefault();
+        const seconds = Number(a.dataset.t);
+        seek(seconds, true);
+        history.replaceState(null, "", `?t=${seconds}`);
+      });
+    });
+  }
+</script>

@@ -1,0 +1,12 @@
+// Cloudflare Workers (Workers Builds): a central é um site estático, servido
+// como assets. Sem este arquivo o `wrangler deploy` não acha o que publicar e
+// tenta configurar o projeto como Worker com servidor.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "euimob-help-center",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

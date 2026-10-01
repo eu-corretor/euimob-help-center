@@ -1,0 +1,18 @@
+---
+// "Revisado em <data> · versão <x>" antes do rodapé padrão (anterior/próximo).
+import Default from "@astrojs/starlight/components/Footer.astro";
+
+const { entry } = Astro.locals.starlightRoute;
+const { verificado_em, versao_sistema } = entry.data;
+const revisado = verificado_em?.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+---
+
+{
+  revisado && (
+    <p class="eu-verified">
+      Revisado em {revisado}
+      {versao_sistema && ` · versão ${versao_sistema}`}
+    </p>
+  )
+}
+<Default><slot /></Default>

@@ -1,0 +1,54 @@
+---
+// Lista interna (sem link no menu, noindex): guias e vídeos com mais de
+// 6 meses desde a última verificação, ou sem data. É a pauta de revisão.
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection } from "astro:content";
+
+const LIMIT_DAYS = 180;
+const cutoff = Date.now() - LIMIT_DAYS * 24 * 60 * 60 * 1000;
+const fmt = (d?: Date) => (d ? d.toLocaleDateString("pt-BR", { timeZone: "UTC" }) : "sem data");
+const isStale = (d?: Date) => !d || d.getTime() < cutoff;
+
+const docs = (await getCollection("docs", ({ data }) => !data.draft))
+  .filter(({ data }) => isStale(data.verificado_em))
+  .map(({ id, data }) => ({ id, title: data.title, verificado: fmt(data.verificado_em) }))
+  .sort((a, b) => a.id.localeCompare(b.id));
+
+const videos = (await getCollection("videos"))
+  .filter(({ data }) => isStale(data.verificado_em))
+  .map(({ id, data }) => ({ id, youtube: data.youtube_id, verificado: fmt(data.verificado_em) }));
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "Guias desatualizados",
+    tableOfContents: false,
+    head: [{ tag: "meta", attrs: { name: "robots", content: "noindex" } }],
+  }}
+>
+  <p>Revisão pendente: sem <code>verificado_em</code> ou verificado há mais de {LIMIT_DAYS} dias.</p>
+
+  <h2>Guias ({docs.length})</h2>
+  {docs.length === 0 ? <p>Nenhum. 🎉</p> : (
+    <table>
+      <thead><tr><th>Guia</th><th>Verificado em</th></tr></thead>
+      <tbody>
+        {docs.map((d) => (
+          <tr><td><a href={`/${d.id}/`}>{d.title}</a></td><td>{d.verificado}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  )}
+
+  <h2>Vídeos ({videos.length})</h2>
+  {videos.length === 0 ? <p>Nenhum.</p> : (
+    <table>
+      <thead><tr><th>Vídeo</th><th>Verificado em</th></tr></thead>
+      <tbody>
+        {videos.map((v) => (
+          <tr><td><a href={`https://youtu.be/${v.youtube}`}>{v.id}</a></td><td>{v.verificado}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  )}
+</StarlightPage>
