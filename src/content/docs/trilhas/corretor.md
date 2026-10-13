@@ -25,7 +25,7 @@ sendo escritos.
 
 4. [Cadastrar um contato](/contatos/cadastrar-um-contato/)
 5. [Cadastrar um imóvel](/imoveis/cadastrar-um-imovel/)
-6. Fotos: enviar, ordenar, capa, marca d'água *(em produção)*
+6. [Fotos do imóvel](/imoveis/fotos-do-imovel/)
 
 ## 3. Atender
 
