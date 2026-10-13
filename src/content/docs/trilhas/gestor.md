@@ -29,10 +29,10 @@ ainda estão sendo escritos.
 
 ## 3. O cadastro
 
-7. Cadastros auxiliares de imóveis: tipos, comodidades, proximidades *(em produção)*
+7. [Cadastros auxiliares de imóveis](/imoveis/cadastros-auxiliares/)
 8. [Cadastrar um contato](/contatos/cadastrar-um-contato/)
 9. [Cadastrar um imóvel](/imoveis/cadastrar-um-imovel/)
-10. Publicar um imóvel *(em produção)*
+10. [Publicar um imóvel e os status](/imoveis/publicar-um-imovel/)
 
 ## 4. Os canais
 
