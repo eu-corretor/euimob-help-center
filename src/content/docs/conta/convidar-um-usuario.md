@@ -10,7 +10,7 @@ versao_sistema: "19.0-2026.09"
 ---
 
 **Caminho:** Configurações → Configuração → Usuários → **Novo**
-**Atalho:** `/odoo/usuarios`
+**Atalho:** `/painel/usuarios`
 **Quem faz:** só o gestor
 
 ---
@@ -65,5 +65,5 @@ com o celular em mãos.
 | Para quê | Caminho |
 | --- | --- |
 | Configurações da imobiliária | Configurações → Configuração → Configurações |
-| Provedor de cobrança Asaas | Configurações → Configuração → Provedor Asaas · `/odoo/provedores-pagamento` |
+| Provedor de cobrança Asaas | Configurações → Configuração → Provedor Asaas · `/painel/provedores-pagamento` |
 

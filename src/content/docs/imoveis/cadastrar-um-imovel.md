@@ -72,6 +72,8 @@ vale conferir antes. Como publicar e o que cada status quer dizer está em
 | Para quê | Caminho |
 | --- | --- |
 | Ver o anúncio como o cliente vê | Botão **Website** no alto do imóvel |
-| Cadastrar várias unidades do mesmo prédio | Menu de ações → **Duplicar** (as fotos vêm junto) |
-| Criar um tipo de imóvel novo (gestor) | Imóveis → Configuração → Tipos de Imóvel · `/painel/tipos-de-imovel` |
-| Cadastrar um condomínio | [Condomínios: cadastrar e vincular unidades](/imoveis/condominios/) · `/painel/empreendimentos` |
+| Criar vários do mesmo prédio | Menu de ações → **Duplicar** (copia as fotos) |
+| Baixar todas as fotos do imóvel | Aba **Mídia** → botão **Baixar Fotos** (um arquivo zip; só fotos enviadas pelo sistema, não as vindas de portais por link) |
+| Criar Tipos de Imóvel (gestor) | Imóveis → Configuração → Tipos de Imóvel · `/painel/tipos-de-imovel` |
+| Cadastrar condomínio | Imóveis → Imóveis → Condomínios · `/painel/condominios` |
+

@@ -10,7 +10,7 @@ versao_sistema: "19.0-2026.09"
 ---
 
 **Caminho:** Conversas → **Clara**
-**Atalho:** `/odoo/discuss`
+**Atalho:** `/painel/discuss`
 **Quem faz:** qualquer pessoa da imobiliária
 
 > A Clara é a assistente da plataforma. Ela responde no mesmo lugar onde te
@@ -72,7 +72,7 @@ valer a pena.
 
 ## Caminhos relacionados
 
-- **Conversas** → `/odoo/discuss` — todas as suas conversas
+- **Conversas** → `/painel/discuss` — todas as suas conversas
 - [Cadastrar um imóvel](/imoveis/cadastrar-um-imovel/)
 - [Faturar a comissão](/financeiro/faturar-a-comissao/)
 

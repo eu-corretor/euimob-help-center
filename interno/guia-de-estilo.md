@@ -15,7 +15,7 @@ outro guia, não uma seção a mais. O corretor lê com o sistema aberto do lado
    quem faz.
    ```
    **Caminho:** Imóveis → Imóveis → Todos os Imóveis → **Novo**
-   **Atalho:** `/odoo/imoveis`
+   **Atalho:** `/painel/imoveis`
    **Quem faz:** captador, vendedor ou assistente
    ```
 2. **Passo a passo**: lista numerada, uma ação por linha, botões e campos em
@@ -42,7 +42,7 @@ versao_sistema: "19.0-2026.10"
 ```
 
 `telas` é o que faz o guia aparecer no botão "?" dentro do sistema: é o final
-da URL da tela (`/odoo/imoveis` → `imoveis`). Um guia pode aparecer em mais de
+da URL da tela (`/painel/imoveis` → `imoveis`). Um guia pode aparecer em mais de
 uma tela.
 
 ## Tom
