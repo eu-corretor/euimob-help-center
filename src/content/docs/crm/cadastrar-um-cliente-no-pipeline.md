@@ -10,7 +10,7 @@ versao_sistema: "19.0-2026.09"
 ---
 
 **Caminho:** CRM → Vendas → Pipeline → **+** na primeira coluna
-**Atalho:** `/odoo/pipeline`
+**Atalho:** `/painel/pipeline`
 **Quem faz:** vendedor ou captador
 
 > Lead que vem do site ou dos portais **já entra sozinho** no Pipeline. Este
@@ -63,7 +63,7 @@ versao_sistema: "19.0-2026.09"
 
 | Para quê | Caminho |
 | --- | --- |
-| Ver todas as visitas da equipe | CRM → Vendas → Visitas · `/odoo/visitas` |
-| Ver suas atividades do dia | CRM → Vendas → Atividades · `/odoo/atividades` |
+| Ver todas as visitas da equipe | CRM → Vendas → Visitas · `/painel/visitas` |
+| Ver suas atividades do dia | CRM → Vendas → Atividades · `/painel/atividades` |
 | Faturar a comissão do negócio ganho | [Faturar a comissão](/financeiro/faturar-a-comissao/) |
 

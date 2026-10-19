@@ -10,7 +10,7 @@ versao_sistema: "19.0-2026.09"
 ---
 
 **Caminho:** Imóveis → Imóveis → Todos os Imóveis → **Novo**
-**Atalho:** `/odoo/imoveis`
+**Atalho:** `/painel/imoveis`
 **Quem faz:** captador, vendedor ou assistente
 
 ---
@@ -74,6 +74,6 @@ Cancelado.
 | Ver o anúncio como o cliente vê | Botão **Website** no alto do imóvel |
 | Criar vários do mesmo prédio | Menu de ações → **Duplicar** (copia as fotos) |
 | Baixar todas as fotos do imóvel | Aba **Mídia** → botão **Baixar Fotos** (um arquivo zip; só fotos enviadas pelo sistema, não as vindas de portais por link) |
-| Criar Tipos de Imóvel (gestor) | Imóveis → Configuração → Tipos de Imóvel · `/odoo/tipos-de-imovel` |
-| Cadastrar condomínio | Imóveis → Imóveis → Condomínios · `/odoo/condominios` |
+| Criar Tipos de Imóvel (gestor) | Imóveis → Configuração → Tipos de Imóvel · `/painel/tipos-de-imovel` |
+| Cadastrar condomínio | Imóveis → Imóveis → Condomínios · `/painel/condominios` |
 

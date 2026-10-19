@@ -10,7 +10,7 @@ versao_sistema: "19.0-2026.09"
 ---
 
 **Caminho:** Contatos → **Novo**
-**Atalho:** `/odoo/contacts`
+**Atalho:** `/painel/contacts`
 **Quem faz:** qualquer corretor
 
 ---
@@ -57,6 +57,6 @@ A busca acha por nome, CPF/CNPJ (com ou sem ponto), e-mail e telefone.
 
 | Para quê | Caminho |
 | --- | --- |
-| Criar novos Tipos de Contato (gestor) | Contatos → Configuração → Tipos de Contato · `/odoo/tipos-de-contato` |
+| Criar novos Tipos de Contato (gestor) | Contatos → Configuração → Tipos de Contato · `/painel/tipos-de-contato` |
 | Tirar alguém da lista sem apagar | Abra o contato → menu de ações → **Arquivar** |
 

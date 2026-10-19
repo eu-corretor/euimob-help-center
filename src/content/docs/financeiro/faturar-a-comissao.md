@@ -11,7 +11,7 @@ versao_sistema: "19.0-2026.09"
 
 **Caminho:** CRM → Pipeline → oportunidade **Ganho** → botão **Gerar
 Faturamento**
-**Atalho:** `/odoo/pipeline` · faturas em `/odoo/customer-invoices`
+**Atalho:** `/painel/pipeline` · faturas em `/painel/customer-invoices`
 **Quem faz:** financeiro (com permissão de faturamento)
 
 > A fatura de comissão **não se cria do zero**. Ela nasce do negócio ganho.
@@ -67,7 +67,7 @@ O que sobra do rateio é o **Saldo da Imobiliária**.
 | Para quê | Caminho |
 | --- | --- |
 | Ver as faturas do negócio | Botão **Honorários** no alto da oportunidade |
-| Faturas de cliente | Faturamento → Clientes → Faturas · `/odoo/customer-invoices` |
-| Cobranças emitidas | `/odoo/cobrancas-asaas` |
+| Faturas de cliente | Faturamento → Clientes → Faturas · `/painel/customer-invoices` |
+| Cobranças emitidas | `/painel/cobrancas-asaas` |
 | Cancelar uma cobrança | Abra a cobrança → **Cancelar Cobrança** (não vale para paga) |
 
