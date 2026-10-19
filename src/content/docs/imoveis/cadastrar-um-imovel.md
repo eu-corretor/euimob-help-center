@@ -1,12 +1,13 @@
 ---
 title: "Cadastrar um imóvel"
-description: "Do tipo do imóvel às fotos e à publicação: o que preencher para salvar e o que a publicação exige."
+description: "O caminho curto para criar a ficha de um imóvel, salvar como rascunho e deixar pronta para publicar."
 secao: imoveis
 telas: [imoveis]
 quem: [corretor]
 funcionalidade: imoveis
-verificado_em: 2026-09-30
-versao_sistema: "19.0-2026.09"
+versao_sistema: "19.0-2026.10"
+sidebar:
+  order: 1
 ---
 
 **Caminho:** Imóveis → Imóveis → Todos os Imóveis → **Novo**
@@ -15,57 +16,56 @@ versao_sistema: "19.0-2026.09"
 
 ---
 
-## Tenha em mãos
+Voltou de uma captação com as fotos no celular e os dados anotados? Este é o
+caminho para transformar isso num anúncio. Você não precisa ter tudo de uma
+vez: dá para salvar com pouca informação e completar depois, com calma.
 
-CEP · 3 fotos no mínimo · texto da descrição.
+## O que ter em mãos
 
-## Passo a passo
+O CEP do imóvel, pelo menos 3 fotos e um texto para o anúncio. Sem texto
+pronto? A IA pode escrever para você.
 
-1. **Imóveis → Imóveis → Todos os Imóveis → Novo**
-2. Aba **Detalhes** → **Tipo de Imóvel** (obrigatório) e **Condição**
-3. Marque **Venda**, **Aluguel** ou **Temporada** — o campo de preço só aparece
-   depois disso
-4. Preencha o preço, o condomínio e o IPTU
-5. Aba **Endereço** → digite o **CEP** → confira o **bairro** → complete número e
-   complemento
-6. Volte em **Detalhes** → quartos, banheiros, vagas, área útil
-7. Marque as etiquetas: Comodidades, Proximidade, Acabamento, Tags
-8. Aba **Mídia** → suba as fotos (cada uma sobe na hora, e a barra mostra
-   quantas já chegaram) → arraste a melhor para o primeiro lugar
-9. Aba **Descrição** → escreva o texto do anúncio
-10. Botão **Publicar**
+## O caminho, do começo ao fim
 
-> O **Título** pode ficar em branco: a plataforma monta o nome sozinho
-> (*"Apartamento de 3 quartos, 90m² no bairro Centro, em Florianópolis"*).
+1. Entre em Imóveis → Imóveis → Todos os Imóveis e clique em **Novo**
+2. Na aba Detalhes, escolha o **Tipo de Imóvel** (apartamento, casa, terreno…)
+3. Diga se é para **Venda**, **Aluguel** ou **Temporada** e informe o preço
+4. Preencha quartos, banheiros, vagas e área
+5. Na aba Endereço, digite o **CEP** e complete o número e o complemento
+6. Na aba Mídia, envie as fotos
+7. Na aba Descrição, escreva o texto do anúncio
+8. Na aba Responsáveis, adicione o proprietário
+9. Salve, no ícone da nuvem, lá no alto
 
-## Para salvar, basta
+Pronto: o imóvel fica guardado como Rascunho. Ninguém de fora vê até alguém
+clicar em **Publicar**. Pode parar no meio e voltar quando quiser.
 
-**Tipo de Imóvel.** Só isso.
+<!-- PRINT: tela de Todos os Imóveis com o botão Novo destacado -->
 
-## Para publicar, precisa de
+Cada aba tem um guia com mais detalhes:
 
-- Tipo do Imóvel
-- Bairro, Cidade, Estado, País
-- Descrição
-- 3 imagens no mínimo
+- [Preencher os detalhes do imóvel](/imoveis/preencher-os-detalhes-do-imovel/): tipo, finalidade, preços, cômodos, áreas e comodidades
+- [Endereço, localização no mapa e imóveis próximos](/imoveis/endereco-e-localizacao-no-mapa/): CEP, Plus Code e sugestões de vizinhos
+- [Responsáveis, proprietários e dados internos](/imoveis/responsaveis-proprietarios-e-dados-internos/)
+- [Fotos do imóvel](/imoveis/fotos-do-imovel/): enviar, capa, ordem, marca d'água e baixar todas
+- [Descrição, post e análise de fotos com IA](/imoveis/ia-no-imovel/)
 
-O preço **não** é exigido pelo sistema. Confira você.
+## O mínimo para salvar
 
-## Se der errado
+Só o Tipo de Imóvel. O resto você completa quando tiver as informações.
 
-| O que acontece | O que fazer |
-| --- | --- |
-| *Favor preencher antes de publicar: …* | Complete o que a mensagem lista e clique em Publicar de novo |
-| Não acho o imóvel que acabei de criar | A lista abre filtrada em **Publicados**. Tire o filtro ou use **Rascunho** |
-| Não aparece campo de preço | Falta marcar Venda / Aluguel / Temporada |
-| Foto de capa errada | A capa é a **primeira** da lista. Arraste |
+## O mínimo para publicar
 
-## Status
+Para o anúncio ir ao ar, o imóvel precisa ter:
 
-Rascunho → Revisão → Pendente de Correção → **Publicado** → Vendido / Alugado /
-Cancelado.
+- o tipo do imóvel
+- bairro, cidade, estado e país (o CEP já preenche tudo isso)
+- a descrição
+- pelo menos 3 fotos
 
-> **Cancelar apaga o Cód. Interno** e não devolve. Para pausar, use Rascunho.
+Repare que o preço não está na lista. O sistema deixa publicar sem preço, então
+vale conferir antes. Como publicar e o que cada status quer dizer está em
+[Publicar um imóvel e os status](/imoveis/publicar-um-imovel/).
 
 ## Caminhos relacionados
 
