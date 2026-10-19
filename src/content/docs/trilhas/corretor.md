@@ -34,6 +34,11 @@ sendo escritos.
 9. Agendar uma visita *(em produção)*
 10. Mover no funil, marcar ganho e perdido *(em produção)*
 
+Só para quem contratou a Locação:
+
+11. [Checklist documental: carregar e conferir](/locacao/checklist-documental/)
+12. [Gerar o contrato a partir da oportunidade](/locacao/gerar-o-contrato-a-partir-da-oportunidade/)
+
 ## 4. Contar com a Clara
 
-11. [Tirar dúvidas com a Clara](/ia/tirar-duvidas-com-a-clara/)
+13. [Tirar dúvidas com a Clara](/ia/tirar-duvidas-com-a-clara/)

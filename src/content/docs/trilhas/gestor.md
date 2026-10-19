@@ -45,3 +45,23 @@ ainda estão sendo escritos.
 14. [Faturar a comissão](/financeiro/faturar-a-comissao/)
 15. Créditos de IA: o que consome e o extrato *(em produção)*
 16. [Tirar dúvidas com a Clara](/ia/tirar-duvidas-com-a-clara/)
+
+## 6. Locação (só para quem contratou a Locação)
+
+Na ordem em que uma coisa depende da outra: primeiro as configurações e os
+cadastros, depois o ciclo de um contrato, por fim o fechamento do ano e a
+leitura dos números.
+
+17. [Configurações de Locação](/locacao/configuracoes-de-locacao/)
+18. [Cadastrar proprietário e padrões de contrato](/locacao/cadastrar-proprietario-e-padroes-de-contrato/)
+19. [Gerar o contrato a partir da oportunidade](/locacao/gerar-o-contrato-a-partir-da-oportunidade/)
+20. [Enviar o contrato para assinatura e ativar](/locacao/enviar-para-assinatura-e-ativar/)
+21. [Faturas mensais: gerar, conferir e pausar a cobrança](/locacao/faturas-mensais/)
+22. [Régua de cobrança: criar a padrão, acompanhar, reenviar](/locacao/regua-de-cobranca/)
+23. [Repasses ao proprietário: liberar, reter, extrato](/locacao/repasses-ao-proprietario/)
+24. [Reajuste: preparar, aplicar, aviso ao locatário](/locacao/reajuste-do-aluguel/)
+25. [Renovação de contrato](/locacao/renovacao-de-contrato/)
+26. [Rescisão e termo de quitação](/locacao/rescisao-e-termo-de-quitacao/)
+27. [DIMOB: apurar o ano, gerar arquivo, enviar informes](/locacao/dimob/)
+28. [Relatórios: vacância, inadimplência, repasses, funil de locação](/locacao/relatorios-de-locacao/)
+29. [O painel de locação](/locacao/o-painel-de-locacao/)
