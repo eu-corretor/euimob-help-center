@@ -50,7 +50,10 @@ ainda estão sendo escritos.
 
 Na ordem em que uma coisa depende da outra: primeiro as configurações e os
 cadastros, depois o ciclo de um contrato, por fim o fechamento do ano e a
-leitura dos números.
+leitura dos números. Dois cadastros só o gestor faz e os outros guias usam:
+a lista de documentos (seção *Quem define a lista* do guia
+[Checklist documental](/locacao/checklist-documental/)) e os índices
+(seção *Publicar o índice do mês* do guia de [Reajuste](/locacao/reajuste-do-aluguel/)).
 
 17. [Configurações de Locação](/locacao/configuracoes-de-locacao/)
 18. [Cadastrar proprietário e padrões de contrato](/locacao/cadastrar-proprietario-e-padroes-de-contrato/)

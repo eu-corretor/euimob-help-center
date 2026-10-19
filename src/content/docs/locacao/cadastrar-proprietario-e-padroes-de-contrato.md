@@ -12,7 +12,8 @@ versao_sistema: "19.0-2026.10"
 **Caminho:** Locação → Cadastros → **Proprietários** · Locação → Cadastros →
 **Padrões de Contrato**
 **Atalho:** `/painel/proprietarios` · `/painel/padroes-contrato-locacao`
-**Quem faz:** gestor (o padrão de contrato só o gestor edita)
+**Quem faz:** o proprietário, quem tem acesso à Locação; o padrão de contrato,
+só o gestor
 
 > Um contrato **não ativa sem proprietário** no imóvel, e o repasse vai para a
 > conta cadastrada aqui. Faça este cadastro antes do primeiro contrato.
@@ -24,7 +25,8 @@ versao_sistema: "19.0-2026.10"
 1. Cadastre a pessoa em **Contatos**, com CPF ou CNPJ e endereço (a DIMOB
    recusa proprietário sem documento válido)
 2. No cadastro do contato, abra a aba **Faturamento** → **Contas bancárias** →
-   informe a conta que vai receber o repasse
+   informe a conta que vai receber o repasse. Essa aba só aparece para quem
+   tem o Financeiro; sem ele, peça ao financeiro para cadastrar a conta
 3. **Locação → Cadastros → Proprietários → Adicionar linha**
 4. Preencha: **Imóvel**, **Proprietário**, **Fração (%)**
 5. **Forma de repasse**: PIX, TED ou Manual
@@ -61,14 +63,16 @@ faz onde editar: é o mesmo registro.
 9. Salve
 
 Crie um padrão por tipo de carteira (residencial, comercial, temporada). O
-valor do aluguel fica em branco no padrão: ele é de cada contrato.
+valor do aluguel não existe no padrão: ele é de cada contrato. Não crie uma
+rubrica **Aluguel** no padrão; a cobrança usa o campo **Aluguel** do contrato.
 
 ## O que a plataforma faz sozinha
 
 | Quando | O que acontece |
 | --- | --- |
 | Você escolhe o **Padrão de contrato** num contrato | Copia todos os termos e as rubricas para o contrato. Depois disso, o que você mudar no contrato não volta para o padrão, e vice-versa |
-| Você deixa a régua ou o índice em branco no padrão | O contrato usa a **Régua de cobrança padrão** e o **Índice de reajuste padrão** das Configurações |
+| Você cria um padrão | Taxa, antecedência, condição, régua, dia do repasse, índice e periodicidade já vêm preenchidos das Configurações |
+| Você deixa a régua ou o índice em branco no padrão | O contrato que usar esse padrão fica **sem** régua ou **sem** índice: o padrão substitui tudo, inclusive os brancos. Preencha os dois |
 
 ## Se der errado
 

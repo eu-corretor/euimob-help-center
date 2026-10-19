@@ -30,7 +30,8 @@ versao_sistema: "19.0-2026.10"
 4. Botão **Liberar** → a situação vira **Liberado** e o lançamento contábil ao
    proprietário é feito (cartão **Lançamento**)
 5. Faça o PIX ou a TED no banco
-6. Botão **Marcar como repassado** → informe **Pago em** e o **Comprovante**
+6. Botão **Marcar como repassado** → **Pago em** recebe a data de hoje. Corrija
+   a data e anexe o **Comprovante** ali mesmo, se quiser
 7. Botão **Extrato** → PDF *Extrato de Repasse* para mandar ao proprietário
 
 ## Reter um repasse
@@ -38,12 +39,16 @@ versao_sistema: "19.0-2026.10"
 Para segurar o dinheiro (reparo a descontar, pendência do proprietário):
 
 1. Repasse em **Rascunho** → botão **Reter** → escreva o **Motivo da retenção**
-2. Ele fica com a faixa **Retido** e não sai no lote, mesmo com repasse
-   automático
+2. Ele fica com a faixa **Retido** e **Liberar** recusa até você resolver
 3. Resolvido, botão **Liberar retenção** → depois **Liberar**
 
-Para descontar um valor, acrescente uma linha de **Dedução** na memória de
-cálculo enquanto o repasse estiver em Rascunho.
+Contrato com **Repassar automaticamente**: o repasse já nasce **Liberado** e
+não dá mais para reter. Para segurar, **Cancelar** → **Voltar a rascunho** →
+**Reter**.
+
+Para descontar um valor, acrescente uma linha do tipo **Dedução** na memória
+de cálculo, com o **Valor negativo**, enquanto o repasse estiver em Rascunho.
+Valor positivo credita o proprietário.
 
 ## O que a plataforma faz sozinha
 
@@ -51,7 +56,7 @@ cálculo enquanto o repasse estiver em Rascunho.
 | --- | --- |
 | Todo dia (robô *Locação: gerar repasses aos proprietários*) | Cria o repasse de cada fatura paga cuja **Data do repasse** chegou: o **Dia do repasse** do contrato, nunca antes do vencimento |
 | O contrato tem **Repasse garantido** | O repasse nasce **antes** de o locatário pagar, com a faixa **Garantido** |
-| O contrato tem **Repassar automaticamente** | O repasse já nasce **Liberado**, salvo se estiver retido |
+| O contrato tem **Repassar automaticamente** | O repasse já nasce **Liberado**, com o lançamento feito |
 | Você clica em **Liberar** | Gera o lançamento ao proprietário e o confirma |
 | O contrato tem **Multa e juros para: Imobiliária** | Multa e juros pagos pelo locatário ficam com a imobiliária, não entram no bruto do proprietário |
 
@@ -64,7 +69,7 @@ cálculo enquanto o repasse estiver em Rascunho.
 | *O repasse '…' já foi liberado e não pode ser excluído. Cancele-o para desfazer o lançamento* | Use **Cancelar**: ele desfaz o lançamento contábil |
 | *Só um repasse cancelado volta para rascunho* | **Voltar a rascunho** só aparece em Cancelado |
 | O repasse não apareceu | A fatura ainda não foi paga, ou a **Data do repasse** não chegou. Para antecipar, abra a fatura paga → **Gerar repasse** |
-| Líquido zerado | A **Conta de aluguéis a repassar** não está configurada; o gestor usa **Criar conta e condição padrão** nas Configurações |
+| *Nenhuma destas faturas está pronta para repasse…* numa fatura paga | A **Conta de aluguéis a repassar** não está configurada e o repasse não nasce. O gestor usa **Criar conta e condição padrão** nas Configurações |
 
 ## Filtros que valem usar
 
@@ -73,7 +78,7 @@ cálculo enquanto o repasse estiver em Rascunho.
 | **A liberar** | O lote do dia do repasse |
 | **Retidos** | O que você segurou e precisa resolver |
 | **Garantidos** | O que a imobiliária adiantou com a fatura em aberto |
-| **Liberados** | Pagos no banco e ainda sem comprovante registrado |
+| **Liberados** | Lançamento feito e ainda não marcados como repassados: o que falta pagar no banco ou registrar |
 | Agrupar por **Proprietário** | Fechar com cada dono |
 
 ## Caminhos relacionados
@@ -82,6 +87,6 @@ cálculo enquanto o repasse estiver em Rascunho.
 | --- | --- |
 | Repasses de um contrato | Cartão **Repasses** no alto do contrato ou da fatura |
 | Total por proprietário no período | Locação → Relatórios → Repasses por Proprietário · `/painel/relatorio-repasses` |
-| O que a imobiliária reteve de taxas | Locação → Relatórios → Retenção de Taxas · `/painel/relatorio-taxas-locacao` |
+| O que a imobiliária reteve de taxas | Locação → Relatórios → Retenção de Taxas (menu só para o gestor) · `/painel/relatorio-taxas-locacao` |
 | Dia do repasse, automático e garantido | [Configurações de Locação](/locacao/configuracoes-de-locacao/) |
 | Conta e forma de repasse do proprietário | [Cadastrar proprietário](/locacao/cadastrar-proprietario-e-padroes-de-contrato/) |

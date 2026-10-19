@@ -11,8 +11,8 @@ versao_sistema: "19.0-2026.10"
 
 **Caminho:** Locação → **Relatórios**
 **Atalho:** `/painel/relatorio-imoveis-locacao` e os demais abaixo
-**Quem faz:** gestor ou financeiro com acesso à Locação (Retenção de Taxas só
-o gestor; Rendimentos Declarados pede permissão de faturamento)
+**Quem faz:** quem tem acesso à Locação (o menu Retenção de Taxas só aparece
+para o gestor e o menu Rendimentos Declarados só para quem tem o Financeiro)
 
 > Cada relatório é a tela de uma pergunta. Todos abrem já filtrados e
 > agrupados; mude o agrupamento pela barra de busca.
@@ -23,8 +23,8 @@ o gestor; Rendimentos Declarados pede permissão de faturamento)
 
 | Relatório | A pergunta | Como abre | Atalho |
 | --- | --- | --- | --- |
-| **Imóveis e Vacância** | Quais imóveis da carteira estão sem contrato? | Lista dos imóveis de aluguel com proprietário, agrupada por **Status** do imóvel. Abra o imóvel → aba **Locação** → **Vago desde** para ver há quanto tempo | `/painel/relatorio-imoveis-locacao` |
-| **Agenciamentos** | Quanto cada gestor de carteira trouxe em contratos? | Pivô: **Gestor da carteira** nas linhas, mês de **Início** nas colunas, soma do **Aluguel** | `/painel/relatorio-agenciamentos` |
+| **Imóveis e Vacância** | Quais imóveis da carteira estão sem contrato? | Lista dos imóveis administrados (com proprietário e de aluguel, temporada ou com contrato vigente), agrupada por **Status** do imóvel. Abra o imóvel → aba **Locação** → **Vago desde** para ver há quanto tempo | `/painel/relatorio-imoveis-locacao` |
+| **Agenciamentos** | Quanto cada gestor de carteira trouxe em contratos? | Pivô: **Gestor da carteira** nas linhas, mês de **Início** nas colunas, soma do **Aluguel**. Entram contratos em qualquer situação, inclusive rascunho e cancelados: filtre por **Situação** | `/painel/relatorio-agenciamentos` |
 | **Funil de Locação** | Como estão as oportunidades de locação? | Lista das oportunidades marcadas como locação, agrupada por **Etapa** | `/painel/relatorio-funil-locacao` |
 | **Retenção de Taxas** | Quanto a imobiliária reteve de administração e intermediação? | Pivô: tipo de taxa nas linhas, mês do repasse nas colunas, soma do valor | `/painel/relatorio-taxas-locacao` |
 | **Inadimplência** | Quem está devendo e quanto? | Lista das faturas de locação com o filtro **Vencidas**, agrupada por **Contrato**, com **Em aberto** somado | `/painel/relatorio-inadimplencia` |
@@ -35,24 +35,27 @@ o gestor; Rendimentos Declarados pede permissão de faturamento)
 ## Passo a passo
 
 1. **Locação → Relatórios** → escolha o relatório
-2. Para trocar de pivô para lista (ou o contrário), use os ícones de visão no
-   canto superior direito
+2. Nos quatro relatórios em pivô (Agenciamentos, Retenção de Taxas, Repasses
+   por Proprietário, Rendimentos Declarados), os ícones de visão no canto
+   superior direito trocam para lista. Os outros quatro são só lista
 3. Para mudar o agrupamento, abra a barra de busca → **Agrupar por** → escolha
-   o campo
+   o campo. Campo que não está na lista: **Adicionar grupo personalizado**
 4. Em pivô, clique num cabeçalho para abrir ou fechar níveis; o botão de
    download exporta a tabela para planilha
-5. Clique numa linha para abrir o registro (imóvel, contrato, fatura, repasse)
+5. Clique numa linha para abrir o registro (imóvel, oportunidade, contrato,
+   fatura, repasse, reajuste). Retenção de Taxas e Rendimentos Declarados são
+   só números, sem registro para abrir
 
 ## Perguntas frequentes
 
 | Pergunta | Relatório e como |
 | --- | --- |
 | Taxa de vacância do mês | **Imóveis e Vacância**: conte os imóveis no grupo de status sem contrato contra o total. O painel já mostra o número pronto |
-| Inadimplência por locatário | **Inadimplência** → agrupe por **Locatário** |
+| Inadimplência por locatário | **Inadimplência** → já vem agrupado por **Contrato** (um contrato, um locatário). Para juntar os contratos de uma mesma pessoa, **Agrupar por → Adicionar grupo personalizado** → o campo do cliente |
 | Inadimplência por mês de competência | **Inadimplência** → agrupe por **Competência** |
 | Repasse de um proprietário no ano | **Repasses por Proprietário** → coluna de mês → some a linha dele |
 | Receita da imobiliária com taxas no trimestre | **Retenção de Taxas** → colunas por mês |
-| Contratos novos por corretor | **Agenciamentos** → troque a linha de **Gestor da carteira** para **Corretor** |
+| Contratos novos por corretor | **Agenciamentos** → no cabeçalho das linhas, troque **Gestor** por **Adicionar grupo personalizado → Corretor** |
 
 ## Caminhos relacionados
 

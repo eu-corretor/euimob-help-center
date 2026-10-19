@@ -13,8 +13,10 @@ versao_sistema: "19.0-2026.10"
 **Atalho:** `/painel/pipeline`
 **Quem faz:** corretor com acesso à Locação
 
-> A aba **Locação** só aparece quando o **Imóvel Principal** da oportunidade
-> aceita aluguel ou temporada. Oportunidade sem imóvel ainda mostra a aba.
+> A aba **Locação** aparece para quem tem acesso à Locação, quando o **Imóvel
+> Principal** da oportunidade aceita aluguel ou temporada. Oportunidade sem
+> imóvel ainda mostra a aba, e oportunidade já marcada como locação nunca a
+> esconde.
 
 ---
 
@@ -32,8 +34,8 @@ versao_sistema: "19.0-2026.10"
 6. Conforme os documentos chegam, marque **Recebido**. A data entra sozinha em
    **Recebido em**
 7. Use **Observação** para o que faltou ou veio incompleto
-8. Acompanhe a barra **Checklist documental** e a marca **Documentação
-   completa**
+8. Acompanhe o contador **Documentos** (recebidos/obrigatórios) e a marca
+   **Documentação completa**
 9. Com tudo recebido, siga para [Gerar o contrato](/locacao/gerar-o-contrato-a-partir-da-oportunidade/)
 
 ## O que a plataforma faz sozinha
@@ -41,7 +43,7 @@ versao_sistema: "19.0-2026.10"
 | Quando | O que acontece |
 | --- | --- |
 | Você clica em **Carregar checklist** | Traz os documentos cadastrados pela imobiliária, sem apagar o que já estava marcado. Pode clicar de novo depois que o gestor acrescentar um documento |
-| Você marca **Recebido** | Preenche **Recebido em** com a data de hoje |
+| Você marca **Recebido** | Preenche **Recebido em** com a data de hoje. A data pode ser corrigida; desmarcar apaga a data |
 | Todos os obrigatórios estão recebidos | **Documentação completa** fica marcada |
 
 ## Quem define a lista
@@ -60,7 +62,7 @@ bancários do proprietário.
 
 | O que aparece | O que fazer |
 | --- | --- |
-| Não vejo a aba **Locação** | O Imóvel Principal é só de venda. Troque o imóvel ou marque Aluguel no cadastro dele |
+| Não vejo a aba **Locação** | O Imóvel Principal é só de venda (troque o imóvel ou marque Aluguel no cadastro dele), ou você não tem acesso à Locação (peça ao gestor) |
 | **Carregar checklist** não traz nada | A imobiliária ainda não tem documentos cadastrados. Peça ao gestor para carregar os padrão |
 | *A garantia de … é fiança, então informe o fiador no titular de um documento do checklist antes de gerar o contrato* | Numa linha de documento do fiador, preencha **Titular** com o contato do fiador |
 
