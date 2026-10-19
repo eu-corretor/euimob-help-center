@@ -32,18 +32,22 @@ Operação → **Cobranças**
 
 Para ajustar: **Locação → Cadastros → Réguas de Cobrança** → abra a régua.
 Cada passo tem **Dias do vencimento** (negativo é antes, positivo é depois),
-**Passo**, **Canal** e **Modelo de e-mail**. **Calendário de dias úteis** joga o
-disparo para o próximo dia útil; **Pausar em negociação** respeita o botão
-**Pausar cobrança** da fatura.
+**Passo**, **Canal** e **Modelo de e-mail**. Sábado e domingo são pulados
+sempre; **Calendário de dias úteis** acrescenta os feriados. **Pausar em
+negociação** respeita o botão **Pausar cobrança** da fatura.
 
 ## Parte 2 — Acompanhar os disparos (financeiro)
 
-1. **Locação → Operação → Cobranças**
+1. **Locação → Operação → Cobranças**. A tela abre no filtro **Agendados**;
+   tire-o para ver os demais
 2. Filtro **Atrasados**: passos agendados para uma data que já passou. O robô
-   roda uma vez por dia; atrasado de um dia é normal
+   roda uma vez por dia e envia tudo que estava previsto até hoje; um atrasado
+   que continua **Agendado** depois da passada do dia é sinal de régua
+   desligada ou robô parado
 3. Filtro **Falharam** → abra o disparo → leia o quadro **Falha** → corrija a
    causa → botão **Reenviar**
-4. Para adiantar um aviso, **Enviar agora** num disparo **Agendado**
+4. Para adiantar um aviso, **Enviar agora** num disparo **Agendado** (na
+   lista, o botão chama-se **Enviar**)
 5. Para segurar um aviso, **Cancelar** (só em Agendado)
 6. Agrupe por **Canal** ou **Disparo previsto** para ver a semana
 
@@ -54,7 +58,7 @@ Dentro da fatura, o cartão **Cobranças** mostra só os disparos dela.
 | Quando | O que acontece |
 | --- | --- |
 | A fatura é confirmada | Agenda todos os passos da régua do contrato, contados a partir do vencimento |
-| Todo dia (robô *Locação: disparar régua de cobrança*) | Envia os passos do dia para o e-mail do locatário |
+| Todo dia (robô *Locação: disparar régua de cobrança*) | Envia os passos previstos até hoje, inclusive os atrasados, para o e-mail do locatário |
 | A fatura é paga ou cancelada | Os passos que faltavam **não** saem |
 | A fatura está com **Pausar cobrança** e a régua tem **Pausar em negociação** | Os passos ficam parados até **Retomar cobrança** |
 | Um envio falha | O disparo vira **Falhou**, com o motivo, e os outros seguem |
@@ -63,12 +67,12 @@ Dentro da fatura, o cartão **Cobranças** mostra só os disparos dela.
 
 | O que aparece | O que fazer |
 | --- | --- |
-| *'…' não tem e-mail cadastrado, então o passo '…' da fatura '…' não foi enviado* | Cadastre o e-mail do locatário e clique em **Reenviar** |
+| *'…' não tem e-mail cadastrado, então o passo '…' não pôde ser enviado* | Cadastre o e-mail do locatário e clique em **Reenviar** |
 | *O passo '…' não tem modelo de e-mail, então não há o que enviar* | Abra a régua e escolha o **Modelo de e-mail** do passo |
 | *O canal '…' ainda não está implementado, então o passo '…' da fatura '…' não foi enviado* | Troque o **Canal** do passo para E-mail |
 | *Não há o que cobrar nestas faturas — quitadas, canceladas ou em negociação: …* | A fatura já foi paga, cancelada ou está pausada. Nada a fazer |
-| Nenhum disparo foi agendado para a fatura | O contrato está sem **Régua de cobrança** na aba Faturamento |
-| Os disparos ficam **Agendados** e nunca saem | A régua está desligada em **Habilitação** nas Configurações |
+| Nenhum disparo foi agendado para a fatura | O contrato está sem **Régua de cobrança** na aba Faturamento, a régua não tem passos, ou a fatura está sem vencimento |
+| Os disparos ficam **Agendados** e nunca saem | A régua está desligada em **Habilitação** nas Configurações. **Enviar agora** e **Reenviar** funcionam mesmo assim |
 
 ## Caminhos relacionados
 

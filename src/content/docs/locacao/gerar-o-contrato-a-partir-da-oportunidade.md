@@ -23,9 +23,11 @@ versao_sistema: "19.0-2026.10"
 
 1. Na oportunidade, confira **Imóvel Principal**, **Contato** e a aba
    **Locação** (oportunidade marcada, garantia escolhida, checklist conferido)
-2. Botão **Gerar Contrato** → o contrato abre
-3. Escolha o **Padrão de contrato** → ele preenche prazos, taxas, recorrência
-   e rubricas
+2. Botão **Gerar Contrato** → o contrato abre, já numerado (*LOC-2026/0001*),
+   com **Corretor** = responsável da oportunidade e **Aluguel** = valor de
+   aluguel do imóvel
+3. Escolha o **Padrão de contrato** (grupo **Responsáveis**) → ele preenche
+   prazos, taxas, recorrência e rubricas
 4. Grupo **Partes**: confira **Imóvel**, **Locatário**; acrescente
    **Corresponsáveis** e **Fiadores** se houver
 5. Grupo **Vigência**: **Início**, **Prazo (meses)** (o **Fim** é calculado),
@@ -38,15 +40,16 @@ versao_sistema: "19.0-2026.10"
 9. Aba **Garantias** → **Adicionar linha** → **Modalidade** (Fiador, Caução,
    Seguro fiança, Cessão fiduciária, Título de capitalização, CredPago ou Sem
    garantia), **Prestador**, **Número/apólice**, **Valor garantido**, vigência.
-   Abaixo, **Seguro incêndio**: seguradora, apólice, valor, prêmio, parcelas,
-   vigência
+   Abaixo, **Seguro incêndio**: **Seguradora**, **Apólice**, **Valor
+   assegurado**, **Prêmio**, **Parcelas**, vigência
 10. Aba **Ocupantes** → quem mora no imóvel além do locatário (nome, documento,
-    nascimento, parentesco)
+    nascimento, **Vínculo com o locatário**)
 11. Aba **Faturamento** → confira **Dia do vencimento**, **Emitir com
     antecedência (dias)**, **Régua de cobrança**, **Dia do repasse**, **Índice
     de reajuste** e **Periodicidade do reajuste (meses)**
-12. Salve. O contrato recebe um número (*LOC-2026/0001*) e segue para
-    [Enviar para assinatura e ativar](/locacao/enviar-para-assinatura-e-ativar/)
+12. Salve e siga para
+    [Enviar para assinatura e ativar](/locacao/enviar-para-assinatura-e-ativar/).
+    Contrato criado pelo botão **Novo** recebe o número ao salvar
 
 A aba **Proprietários** é só leitura: vem do cadastro do imóvel. A aba
 **Aditivos** fica para depois, quando o contrato mudar (valor, prazo, partes
@@ -56,17 +59,17 @@ ou garantia).
 
 | Quando | O que acontece |
 | --- | --- |
-| Você clica em **Gerar Contrato** | Cria o contrato ligado à oportunidade (campo **Oportunidade de origem**) e o botão some, para não gerar dois |
+| Você clica em **Gerar Contrato** | Cria o contrato ligado à oportunidade (campo **Oportunidade de origem**) com imóvel, locatário, corretor, aluguel e a linha de garantia (se a **Garantia pretendida** foi escolhida). O botão some, para não gerar dois |
 | Você escolhe o **Padrão de contrato** | Copia termos e rubricas do padrão; o que estava nas rubricas é substituído |
 | Você informa **Início** e **Prazo** | Calcula o **Fim** |
-| A garantia da oportunidade é fiador | Traz como **Fiadores** os titulares dos documentos de fiador do checklist |
+| O checklist tem documento de fiador com **Titular** | Traz os titulares como **Fiadores** do contrato |
 
 ## Se der errado
 
 | O que aparece | O que fazer |
 | --- | --- |
 | *… não está marcada como oportunidade de locação* | Aba Locação → marque **Oportunidade de locação** |
-| *Informe o imóvel principal de … antes de gerar o contrato de locação* | Aba Imóveis → escolha o **Imóvel Principal** |
+| *Informe o imóvel principal de … antes de gerar o contrato de locação* | No alto da oportunidade, logo abaixo do título, escolha o **Imóvel Principal** |
 | *Informe o cliente de … antes de gerar o contrato de locação* | Preencha o **Contato** da oportunidade |
 | *… já gerou o contrato LOC-…* | O contrato existe. Abra pelo botão **Locação** no alto da oportunidade |
 | *A garantia de … é fiança, então informe o fiador no titular de um documento do checklist* | Aba Locação → numa linha de documento do fiador, preencha **Titular** |

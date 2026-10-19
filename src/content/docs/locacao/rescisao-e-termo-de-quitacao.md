@@ -12,11 +12,11 @@ versao_sistema: "19.0-2026.10"
 **Caminho:** Locação → Operação → **Contratos** → contrato → botão
 **Rescindir** · Locação → Operação → **Rescisões**
 **Atalho:** `/painel/rescisoes`
-**Quem faz:** gestor com acesso à Locação
+**Quem faz:** quem tem acesso à Locação; em geral o gestor
 
 > Clicar em **Rescindir** já tira o contrato da emissão: ele vai para **Em
 > rescisão** na hora. Se desistir, **Cancelar** a rescisão devolve o contrato a
-> Ativo.
+> Ativo (mesmo que estivesse Em renovação).
 
 ---
 
@@ -32,15 +32,18 @@ versao_sistema: "19.0-2026.10"
    ocupados na última competência, descontado o que já foi faturado), a
    **Multa de rescisão** (ou a faixa **Multa dispensada**), a **Caução a
    devolver** e o **Total do acerto**
-5. Negociou? Marque **Multa dispensada** ou altere os valores à mão
+5. Negociou? Altere a **Multa de rescisão** (zere para dispensar) ou os outros
+   valores à mão. A faixa **Multa dispensada** é calculada pelo motivo e pela
+   carência; não se marca à mão
 6. Grupo **Situação financeira**: **Débitos em aberto** mostra o que o
    locatário ainda deve em faturas. Cobre antes ou junto
 7. **Observações**: estado do imóvel, vistoria, acordos
 8. Botão **Efetivar rescisão** → a situação vira **Rescindido**, o contrato
    vai para **Encerrado** e o imóvel volta a ficar disponível
-9. Cartão **Acerto** → a **Fatura do acerto** (cobrança ao locatário se o
-   total é positivo; nota de crédito se a caução supera o que ele deve).
-   Confirme e cobre, ou devolva
+9. Cartão **Acerto** → a **Fatura do acerto** já sai confirmada (cobrança ao
+   locatário se o total é positivo; nota de crédito se o total fica a favor
+   dele, por caução ou aluguel pré-pago). Cobre, ou devolva. Com total zero
+   não há fatura e o cartão não aparece
 10. Com todas as faturas quitadas, botão **Termo de quitação** → PDF *Termo de
     Quitação*
 
@@ -58,8 +61,8 @@ versao_sistema: "19.0-2026.10"
 
 | O que aparece | O que fazer |
 | --- | --- |
-| *O contrato … não está vigente e por isso não pode ser rescindido* | Só contrato Ativo, Em renovação ou Em rescisão rescinde |
-| *O contrato … já tem uma rescisão em andamento* | Abra-a em Locação → Operação → Rescisões → filtro **Em andamento** |
+| *O contrato … não está vigente e por isso não pode ser rescindido* (ao efetivar) | Só contrato Ativo, Em renovação ou Em rescisão rescinde |
+| *O contrato … já tem uma rescisão em andamento* (ao criar uma rescisão à mão) | Abra a existente em Locação → Operação → Rescisões → filtro **Em andamento** ou **Efetivadas**. Pelo botão **Rescindir** do contrato, a rescisão existente reabre sozinha |
 | *A rescisão de … não pode ser anterior ao início do contrato* | Corrija **Entrega das chaves** |
 | *O termo de quitação só sai depois da rescisão efetivada* | Clique em **Efetivar rescisão** primeiro |
 | *O contrato … ainda tem R$ … em aberto. Quite as faturas antes de emitir o termo de quitação* | Registre os pagamentos das faturas abertas (inclusive a do acerto) |

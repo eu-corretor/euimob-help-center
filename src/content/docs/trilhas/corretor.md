@@ -34,7 +34,7 @@ sendo escritos.
 9. Agendar uma visita *(em produção)*
 10. Mover no funil, marcar ganho e perdido *(em produção)*
 
-Só para quem contratou a Locação:
+Só para quem o gestor deu acesso à Locação:
 
 11. [Checklist documental: carregar e conferir](/locacao/checklist-documental/)
 12. [Gerar o contrato a partir da oportunidade](/locacao/gerar-o-contrato-a-partir-da-oportunidade/)

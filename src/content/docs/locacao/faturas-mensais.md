@@ -27,7 +27,8 @@ versao_sistema: "19.0-2026.10"
 3. Botão **Confirmar**. A régua de cobrança daquela fatura é agendada neste
    momento
 4. Botão **Enviar** para mandar a fatura ao locatário. Se a imobiliária recebe
-   pelo Asaas, use **Gerar Nova Cobrança** para emitir boleto e PIX
+   pelo Asaas, use **Gerar Nova Cobrança** para emitir boleto e PIX (botão
+   só para quem tem o Financeiro)
 5. Durante o mês, filtro **Em aberto** (padrão da tela) e **Vencidas** para
    acompanhar; agrupe por **Competência** ou **Contrato**
 6. Quando o locatário paga, registre o pagamento (**Pagar**). Pagamento pelo
@@ -56,10 +57,10 @@ Sem isso, os avisos continuam saindo.
 | Todo dia (robô *Locação: gerar faturas de aluguel*) | Cria a fatura de cada contrato **Ativo** cuja competência chegou na janela: **Dia do vencimento** menos **Emitir com antecedência (dias)** |
 | Você confirma a fatura | Agenda cada passo da régua de cobrança em dia útil (lembrete antes do vencimento, aviso no dia, avisos de atraso) |
 | O locatário paga | A fatura fica pronta para o repasse ao proprietário no próximo **Dia do repasse** |
-| A competência é a primeira ou a última do contrato | Com **Primeira competência: Proporcional aos dias**, cobra só os dias ocupados |
+| A competência é a primeira do contrato | Com **Primeira competência: Proporcional aos dias**, cobra só os dias ocupados. A última competência é sempre proporcional |
 
-Contrato **Em renovação** ou **Em rescisão** **não** gera fatura. Volte-o a
-Ativo ou gere a fatura à mão.
+Contrato **Em renovação** ou **Em rescisão** **não** gera fatura, nem pelo
+botão **Gerar fatura**, que some. Para emitir, volte-o a Ativo.
 
 ## Se der errado
 
@@ -69,8 +70,8 @@ Ativo ou gere a fatura à mão.
 | *A gestão de aluguel não está contratada para …* | A Locação não está no plano. Fale com o suporte |
 | A fatura do mês não apareceu | Contrato não está **Ativo**, ou a antecedência ainda não chegou. Confira a situação e a **Próxima fatura** |
 | Valor errado na fatura em rascunho | Corrija as linhas na própria fatura antes de confirmar. Para os meses seguintes, ajuste as **Rubricas** ou o **Aluguel** no contrato |
-| **Pausar cobrança** não aparece | A fatura não está confirmada, ou já foi paga |
-| *Nenhuma destas faturas está pronta para repasse: ou já foi repassada, ou o locatário ainda não pagou* | O botão **Gerar repasse** só vale para fatura paga (ou contrato com **Repasse garantido**) |
+| **Pausar cobrança** não aparece | A fatura não está confirmada, já foi paga, ou já está pausada (aí aparece **Retomar cobrança**) |
+| *Nenhuma destas faturas está pronta para repasse: ou já foi repassada, ou o locatário ainda não pagou* | O botão **Gerar repasse** só vale para fatura paga (ou contrato com **Repasse garantido**). Numa fatura paga, falta a **Conta de aluguéis a repassar** nas Configurações |
 
 ## Filtros que valem usar
 

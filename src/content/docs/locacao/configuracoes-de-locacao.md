@@ -45,9 +45,9 @@ versao_sistema: "19.0-2026.10"
 
 | Campo | Efeito |
 | --- | --- |
-| **Régua de cobrança** | Desligada, os avisos de cobrança não saem, mesmo com régua no contrato |
+| **Régua de cobrança** | Desligada, o robô não dispara os avisos, mesmo com régua no contrato. **Enviar agora** e **Reenviar** continuam funcionando |
 | **DIMOB** | Desligada, a tela DIMOB recusa apurar |
-| **Conta de aluguéis a repassar** | Onde o aluguel recebido fica guardado até o repasse. Sem ela, o repasse sai zerado |
+| **Conta de aluguéis a repassar** | Onde o aluguel recebido fica guardado até o repasse. Sem ela, o repasse não é gerado |
 | **Conta de receita da administração** | Onde entram a taxa de administração e, se **Multa e juros para** for Imobiliária, a multa e os juros |
 | **Taxa de administração (%)** | Desconto do repasse. Vai para o contrato novo; o padrão de contrato pode sobrescrever |
 | **Emitir fatura com antecedência (dias)** | Quantos dias antes do vencimento a fatura nasce |
@@ -65,16 +65,16 @@ versao_sistema: "19.0-2026.10"
 | Você cria um contrato ou um padrão de contrato | Taxa, antecedência, condição, régua, dia do repasse, automático, garantido, destino da multa, índice e periodicidade vêm preenchidos daqui |
 | Você clica em **Criar conta e condição padrão** | Cria só o que falta; o que você já escolheu fica. O botão some quando tudo está preenchido |
 | Você clica em **Criar régua padrão** | Cria a régua com cinco passos e a põe como padrão; some quando já há uma |
-| Você clica em **Carregar documentos padrão** | Acrescenta os documentos que ainda não existem; não apaga nem renomeia os seus |
+| Você clica em **Carregar documentos padrão** | Acrescenta os documentos que ainda não existem; não apaga nem renomeia os seus. Um documento padrão que você renomeou volta com o nome original; um que você arquivou não volta |
 
 ## Se der errado
 
 | O que aparece | O que fazer |
 | --- | --- |
-| Não vejo a aba **Locação** | A Locação não está no plano, ou você não é gestor |
+| Não vejo **Configurações Gerais** no menu | Só o gestor abre esta tela |
 | O grupo **Cobrança** não aparece | Marque **Régua de cobrança** em Habilitação e salve |
 | Mudei a taxa e o contrato antigo não mudou | Esperado. Edite o contrato (aba Faturamento) ou o padrão de contrato |
-| Repasse sai zerado | Falta a **Conta de aluguéis a repassar**: clique em **Criar conta e condição padrão** |
+| O repasse não nasce da fatura paga | Falta a **Conta de aluguéis a repassar**: clique em **Criar conta e condição padrão** |
 
 ## Caminhos relacionados
 

@@ -27,13 +27,16 @@ versao_sistema: "19.0-2026.10"
    contrato
 3. Aba **Documentos** → suba o PDF do contrato que a imobiliária redigiu
 4. Aba **Assinantes** → confira a lista: locatário, corresponsáveis, fiadores
-   e proprietários já vêm preenchidos. Cada um precisa de e-mail no cadastro
+   e proprietários já vêm preenchidos. Cada um precisa, no cadastro, de e-mail
+   e de nome e sobrenome sem números
 5. Escolha o **Provedor** (ClickSign ou DocuSign, com a conta da imobiliária) e
    o **Prazo**
 6. Aba **Convite** → ajuste **Assunto** e **Mensagem** se quiser
 7. Botão **Enviar para Assinatura**
 8. Acompanhe pelo cartão **Assinaturas** no alto do contrato. A solicitação
-   passa por **Enviando → Em assinatura → Concluída**
+   passa por **Enviando → Em assinatura → Concluída**. Se o envio falhar, ela
+   fica em **Erro**: corrija a causa e clique em **Enviar para Assinatura** de
+   novo
 9. Com a solicitação **Concluída**, volte ao contrato → botão **Ativar**
 10. Confira na aba **Faturamento** o campo **Próxima fatura**: é quando a
     primeira cobrança nasce
@@ -47,7 +50,7 @@ histórico e clique em **Ativar**.
 | --- | --- |
 | Você clica em **Solicitar Assinatura Eletrônica** | Cria a solicitação com as partes do contrato como assinantes |
 | Todos assinam | Registra uma nota no histórico do contrato com os PDFs assinados. O contrato **continua em assinatura** até você ativar |
-| Alguém recusa ou o prazo vence | A solicitação fica **Recusada** ou **Expirada** e o contrato avisa no histórico |
+| Alguém recusa ou o prazo vence | A solicitação fica **Recusada** ou **Expirada** e o contrato avisa no histórico. A plataforma fica sabendo pelo provedor, na hora ou na conferência diária |
 | Você clica em **Ativar** | Marca o imóvel como alugado, agenda a **Próxima fatura** e o **Próximo reajuste** |
 
 ## Se der errado
@@ -59,8 +62,9 @@ histórico e clique em **Ativar**.
 | *O imóvel … não tem proprietário. Informe os proprietários no cadastro do imóvel antes de ativar o contrato …* | [Cadastre o proprietário](/locacao/cadastrar-proprietario-e-padroes-de-contrato/) e volte |
 | *A gestão de aluguel não está contratada para …* | A Locação não está no plano da imobiliária. Fale com o suporte |
 | *O contrato … está em 'Cancelado' e não pode ir para 'Ativo'* | Botão **Voltar para rascunho** e refaça o caminho |
-| Não vejo **Solicitar Assinatura Eletrônica** | A Assinatura Eletrônica não está configurada. O gestor cadastra o provedor em Assinatura Eletrônica → Configuração → Provedores · `/painel/provedores-assinatura` |
-| Assinante sem e-mail | Abra o contato e preencha o e-mail antes de enviar |
+| Não vejo **Solicitar Assinatura Eletrônica** | Você não tem acesso à Assinatura Eletrônica, ou o contrato não está em Rascunho nem Em assinatura. Peça o acesso ao gestor |
+| *Escolha o provedor de assinatura antes de enviar* | Não há provedor cadastrado. O gestor cadastra em Assinatura Eletrônica → Configuração → Provedores · `/painel/provedores-assinatura` |
+| *O contato … não tem e-mail* · *… precisa de nome e sobrenome para assinar* · *O nome do contato … tem números* | Abra o contato e corrija o e-mail ou o nome antes de enviar |
 
 ## Caminhos relacionados
 

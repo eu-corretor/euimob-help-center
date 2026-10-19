@@ -29,9 +29,12 @@ versao_sistema: "19.0-2026.10"
 4. Grupo **Valores**: **Aluguel anterior**, **Percentual aplicado (%)** e
    **Novo aluguel**
 5. Negociou outro valor? Digite o **Novo aluguel** à mão. O reajuste ganha a
-   faixa **Ajustado à mão**
-6. Botão **Aplicar** → o aluguel do contrato muda a partir da vigência e as
-   partes recebem o e-mail *Reajuste do aluguel a partir de mm/aaaa*
+   faixa **Ajustado à mão**. Com o índice incompleto, o robô não aplica o
+   valor digitado: clique em **Aplicar**
+6. Botão **Aplicar** → o aluguel do contrato muda e as partes recebem o e-mail
+   *Reajuste do aluguel a partir de mm/aaaa*. Aplique à mão só depois que a
+   fatura da competência anterior já saiu: o valor novo vale para qualquer
+   fatura emitida dali em diante
 7. Para mandar o aviso de novo, botão **Reenviar aviso**
 
 Para preparar antes dos 30 dias: abra o contrato → botão **Preparar reajuste**.
@@ -47,10 +50,10 @@ mês) e **Variação no mês (%)**. Só o gestor edita.
 
 | Quando | O que acontece |
 | --- | --- |
-| Todo dia (robô *Locação: preparar e aplicar reajustes*) | Prepara o reajuste dos contratos a 30 dias do aniversário e aplica, na véspera da emissão da fatura da competência de vigência, os que estão com o índice completo. Assim a fatura já sai com o valor novo |
-| O índice não publicou algum mês | O reajuste fica em rascunho com o aviso *O índice ainda não publicou as competências …* e o filtro **Índice incompleto** o encontra |
-| Você aplica | Grava o novo aluguel, agenda o **Próximo reajuste** (periodicidade do contrato), escreve no histórico do contrato e avisa locatário e proprietários por e-mail |
-| Você cancela | Pula este aniversário: o próximo reajuste vai para a data seguinte |
+| Todo dia (robô *Locação: preparar e aplicar reajustes*) | Prepara o reajuste dos contratos a 30 dias do aniversário e aplica, da véspera da emissão da fatura da competência de vigência em diante, os que estão com o índice completo. Assim a fatura já sai com o valor novo |
+| O índice não publicou algum mês | O reajuste fica em rascunho com o aviso *O índice ainda não publicou as competências …* e o filtro **Índice incompleto** o encontra. O robô não o aplica, mesmo com **Novo aluguel** digitado |
+| Você aplica | Grava o novo aluguel, agenda o **Próximo reajuste** (vigência mais os **Meses acumulados**), escreve no histórico do contrato e avisa locatário e proprietários por e-mail |
+| Você cancela | Pula este aniversário: o próximo reajuste vai para a data seguinte. **Voltar a rascunho** desfaz |
 
 ## Se der errado
 
@@ -58,8 +61,8 @@ mês) e **Variação no mês (%)**. Só o gestor edita.
 | --- | --- |
 | *O índice … ainda não tem as competências …. Publique os valores ou combine o novo aluguel à mão* | Publique o mês nos Índices Econômicos, ou digite o **Novo aluguel** |
 | *A competência de mm/aaaa do contrato '…' já foi faturada. Cancele a fatura antes de aplicar o reajuste* | A fatura do mês da vigência já existe. Cancele-a, aplique o reajuste e gere a fatura de novo |
-| *O reajuste de '…' está zerado. Informe o novo aluguel antes de aplicá-lo* | Índice acumulado zero ou aluguel em branco. Digite o **Novo aluguel** |
-| *Nenhum destes contratos tem aniversário pendente de reajuste* | O contrato não tem **Índice de reajuste** ou o próximo aniversário já está preparado |
+| *O reajuste de '…' está zerado. Informe o novo aluguel antes de aplicá-lo* | **Novo aluguel** está zero: o **Aluguel anterior** estava em branco ou o valor foi apagado. Digite o **Novo aluguel** |
+| *Nenhum destes contratos tem aniversário pendente de reajuste* | O **Próximo reajuste** do contrato está em branco, cai depois do **Fim**, ou já existe um reajuste para essa data |
 | *Só um reajuste aplicado pode ser comunicado* | **Reenviar aviso** só vale depois de **Aplicar** |
 | *A competência do índice é o primeiro dia do mês. Corrija dd/mm/aaaa* | Na série mensal, use o dia 1 |
 
