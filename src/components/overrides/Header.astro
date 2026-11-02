@@ -1,0 +1,30 @@
+---
+// Cabeçalho no padrão do euimob.com.br: branco translúcido, marca, navegação,
+// busca, tema e "Acessar plataforma". Busca e tema são os do Starlight.
+import Search from "virtual:starlight/components/Search";
+import SiteTitle from "virtual:starlight/components/SiteTitle";
+import ThemeSelect from "virtual:starlight/components/ThemeSelect";
+
+const path = Astro.url.pathname;
+const links = [
+  { href: "/", label: "Guias", active: !path.startsWith("/treinamento") && !path.startsWith("/perguntas-frequentes") },
+  { href: "/treinamento/", label: "Treinamento", active: path.startsWith("/treinamento") },
+  { href: "/perguntas-frequentes/", label: "Perguntas frequentes", active: path.startsWith("/perguntas-frequentes") },
+];
+---
+
+<div class="eu-header">
+  <SiteTitle />
+  <nav class="eu-header__nav" aria-label="Principal">
+    {links.map(({ href, label, active }) => (
+      <a href={href} aria-current={active ? "page" : undefined}>{label}</a>
+    ))}
+  </nav>
+  <div class="eu-header__search print:hidden">
+    <Search />
+  </div>
+  <div class="eu-header__theme print:hidden">
+    <ThemeSelect />
+  </div>
+  <a class="eu-btn eu-btn--sm eu-header__cta" href="https://euimob.com.br/web/login">Acessar plataforma</a>
+</div>

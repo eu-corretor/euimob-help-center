@@ -52,7 +52,7 @@ uma tela.
 - A palavra é **guia** (não tutorial, não manual). A empresa é **imobiliária**.
   A pessoa é **corretor**, **gestor** ou **financeiro**.
 - Nunca o nome interno do projeto, nunca "Odoo", nunca nome de módulo.
-- A plataforma se chama **EuImob**; a assistente, **Clara**.
+- A plataforma se chama **Eu Imob** (duas palavras); a assistente, **Clara**.
 
 ## Capturas de tela
 

@@ -1,0 +1,69 @@
+---
+// /treinamento/<módulo>/ — as aulas de um módulo, com o progresso e a
+// passagem para o próximo módulo.
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+import Icon from "../../../components/Icon.astro";
+import LessonList from "../../../components/LessonList.astro";
+import { getModules, progressPayload, totalDuration, trainingSidebar, type Module } from "../../../lib/treinamento";
+
+export async function getStaticPaths() {
+  const modules = await getModules();
+  return modules.map((module, i) => ({
+    params: { modulo: module.slug },
+    props: { module, next: modules[i + 1] ?? null, total: modules.length },
+  }));
+}
+
+interface Props {
+  module: Module;
+  next: Module | null;
+  total: number;
+}
+
+const { module, next, total } = Astro.props;
+const duration = totalDuration(module.lessons);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: `Módulo ${module.number}: ${module.titulo}`,
+    description: module.descricao,
+    tableOfContents: false,
+    pagefind: false,
+    prev: false,
+    next: false,
+  }}
+  sidebar={await trainingSidebar()}
+>
+  <div class="eu-course not-content">
+    <p class="eu-crumb"><a href="/treinamento/">Treinamento</a><span aria-hidden="true">/</span>Módulo {module.number} de {total}</p>
+    <p class="eu-lead">{module.descricao}</p>
+
+    <section class="eu-course__summary" aria-label="Progresso do módulo" data-progress={progressPayload(module.lessons)}>
+      <div class="eu-course__progress">
+        <p>
+          <span data-progress-count>0 de {module.lessons.length}</span> aulas concluídas
+          {duration && <> · {duration} de vídeo</>}
+        </p>
+        <div class="eu-progress" data-progress-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label={`Progresso do módulo ${module.titulo}`}><i></i></div>
+      </div>
+      <a class="eu-btn" href={module.lessons[0].href} data-progress-next data-start-label="Começar o módulo" data-done-label="Rever o módulo">
+        <span data-label>Começar o módulo</span>
+        <Icon name="arrow" size={18} class="eu-btn__arrow" />
+      </a>
+    </section>
+
+    <LessonList lessons={module.lessons} />
+
+    <a class="eu-next-module" href={next ? next.href : "/treinamento/"}>
+      <span>{next ? "Próximo módulo" : "Último módulo"}</span>
+      <strong>{next ? `Módulo ${next.number}: ${next.titulo}` : "Voltar ao Treinamento"}</strong>
+      <Icon name="arrow" size={20} class="eu-card-arrow" />
+    </a>
+  </div>
+</StarlightPage>
+
+<script>
+  import "../../../scripts/treinamento";
+</script>

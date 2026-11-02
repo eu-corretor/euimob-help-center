@@ -32,6 +32,30 @@ export const collections = {
         .min(1),
     }),
   }),
+  // Módulos do Treinamento (/treinamento): o curso em vídeo, separado dos
+  // guias. Cada aula tem página própria; `guia` só aponta para o guia escrito
+  // relacionado, e `video` é o slug em src/content/videos.
+  treinamento: defineCollection({
+    loader: glob({ pattern: "**/*.yaml", base: "./src/content/treinamento" }),
+    schema: z.object({
+      titulo: z.string(),
+      descricao: z.string(),
+      ordem: z.number().int(),
+      quem: z.array(z.enum(["gestor", "corretor", "financeiro"])).default([]),
+      opcional: z.boolean().default(false),
+      aulas: z
+        .array(
+          z.object({
+            slug: z.string().regex(/^[a-z0-9-]+$/),
+            titulo: z.string(),
+            descricao: z.string().default(""),
+            video: z.string().optional(),
+            guia: z.string().optional(),
+          })
+        )
+        .min(1),
+    }),
+  }),
   transcricoes: defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/transcricoes" }),
     schema: z.object({

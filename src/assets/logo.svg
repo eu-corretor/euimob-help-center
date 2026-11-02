@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" role="img" aria-label="EuImob">
-  <rect x="2" y="6" width="28" height="28" rx="7" fill="#4164dd"/>
-  <path d="M9 24V15l7-5 7 5v9h-4.5v-5h-5v5z" fill="#fff"/>
-  <text x="38" y="28" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="currentColor">EuImob</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 469 394" role="img" aria-label="Eu Imob">
+  <g fill="#fff">
+    <rect width="86" height="394"/>
+    <rect width="200" height="86"/>
+    <rect y="154" width="200" height="86"/>
+    <rect y="308" width="200" height="86"/>
+    <rect x="228" y="154" width="86" height="240"/>
+    <rect x="383" y="154" width="86" height="240"/>
+    <rect x="228" y="308" width="241" height="86"/>
+  </g>
 </svg>

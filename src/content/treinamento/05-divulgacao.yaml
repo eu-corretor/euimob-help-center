@@ -1,0 +1,31 @@
+titulo: Site e redes sociais
+descricao: Levar os imóveis para o site e para o Facebook e o Instagram.
+ordem: 5
+quem: [gestor, corretor]
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: ligar-ou-desligar-o-chat-do-site
+    titulo: "Ligar ou desligar o chat do site"
+    descricao: "Como ligar ou desligar, site a site, o chat em que o assistente virtual atende os visitantes."
+    guia: site/ligar-ou-desligar-o-chat-do-site
+  - slug: conectar-facebook-e-instagram
+    titulo: "Conectar a Página do Facebook e o Instagram"
+    descricao: "Autorizar a plataforma a publicar na Página do Facebook da imobiliária e no Instagram vinculado a ela."
+    guia: redes-sociais/conectar-facebook-e-instagram
+  - slug: publicar-um-imovel-nas-redes
+    titulo: "Publicar um imóvel nas redes: fotos ou arte"
+    descricao: "Levar um imóvel publicado para o Facebook e o Instagram da imobiliária, com uma arte pronta ou com as fotos da galeria."
+    guia: redes-sociais/publicar-um-imovel-nas-redes
+  - slug: legenda-com-ia
+    titulo: "Legenda com IA"
+    descricao: "Gerar a legenda da publicação a partir dos dados do imóvel, para o Instagram, o Facebook ou os dois."
+    guia: redes-sociais/legenda-com-ia
+  - slug: editor-de-arte
+    titulo: "Editor de arte: modelo, logo, cor, fotos, textos e recorte"
+    descricao: "Montar a arte do imóvel para o feed: escolher o modelo, trocar e enquadrar as fotos, ajustar textos, características, cor e logo."
+    guia: redes-sociais/editor-de-arte
+  - slug: agendar-cancelar-tentar-de-novo
+    titulo: "Agendar, cancelar, tentar de novo e excluir na rede"
+    descricao: "Programar uma publicação para outro dia, cancelar o agendamento, refazer o que falhou e apagar um post do Facebook."
+    guia: redes-sociais/agendar-cancelar-tentar-de-novo

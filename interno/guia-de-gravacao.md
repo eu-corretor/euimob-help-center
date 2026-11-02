@@ -32,7 +32,7 @@ sandbox. Nunca um dado real de cliente.
 
 ## Publicar no YouTube
 
-- Canal da EuImob, vídeo **não listado**.
+- Canal da Eu Imob, vídeo **não listado**.
 - Título = título do guia. Descrição = a primeira frase do guia + os capítulos.
 - **Capítulos são obrigatórios**: na descrição, um por linha, `mm:ss Assunto`,
   o primeiro em `00:00`. O YouTube os transforma em capítulos do player, e são

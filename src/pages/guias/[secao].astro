@@ -1,0 +1,52 @@
+---
+// /guias/<seção>/ — todos os guias de uma seção, na ordem do menu. É para
+// onde leva o card da seção em "Por assunto" na home.
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+import Icon from "../../components/Icon.astro";
+import { getSections, hrefOf, readingMinutes, type Section } from "../../lib/guides";
+import type { IconName } from "../../lib/icons";
+
+export async function getStaticPaths() {
+  const sections = await getSections();
+  return sections
+    .filter((s) => s.guides.length > 0)
+    .map((section) => ({ params: { secao: section.directory }, props: { section } }));
+}
+
+interface Props {
+  section: Section;
+}
+
+const { section } = Astro.props;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: section.label,
+    description: section.description || `Guias de ${section.label} na plataforma Eu Imob.`,
+    tableOfContents: false,
+    pagefind: false,
+    prev: false,
+    next: false,
+  }}
+>
+  <div class="not-content eu-section-page">
+    <p class="eu-crumb"><a href="/#secoes">Guias</a><span aria-hidden="true">/</span>{section.label}</p>
+    {section.description && <p class="eu-lead">{section.description}</p>}
+    <ol class="eu-guide-list">
+      {section.guides.map((g) => (
+        <li>
+          <a href={hrefOf(g)}>
+            <span class="eu-guide-list__icon"><Icon name={section.directory as IconName} size={18} /></span>
+            <span class="eu-guide-list__body">
+              <span class="eu-guide-list__title">{g.data.title}</span>
+              {g.data.description && <span class="eu-guide-list__desc">{g.data.description}</span>}
+            </span>
+            <span class="eu-guide-list__min">{readingMinutes(g)} min</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</StarlightPage>

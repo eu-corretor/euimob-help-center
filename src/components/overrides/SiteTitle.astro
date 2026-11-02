@@ -1,0 +1,14 @@
+---
+// Marca "Eu Imob" (a mesma do euimob.com.br) + "Central de Ajuda".
+// Duas versões do logo: "Imob" escuro no tema claro, branco no escuro.
+import marca from "../../assets/marca.png";
+import marcaEscura from "../../assets/marca-escura.png";
+
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="eu-site-title">
+  <img src={marca.src} width={marca.width} height={marca.height} alt="Eu Imob" class="eu-site-title__logo eu-site-title__logo--light" />
+  <img src={marcaEscura.src} width={marcaEscura.width} height={marcaEscura.height} alt="Eu Imob" class="eu-site-title__logo eu-site-title__logo--dark" />
+  <span class="eu-site-title__sub">Central de Ajuda</span>
+</a>

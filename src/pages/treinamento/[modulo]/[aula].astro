@@ -1,0 +1,109 @@
+---
+// /treinamento/<módulo>/<aula>/ — a aula em vídeo. Sem vídeo publicado, mostra
+// "vídeo em breve" e leva ao guia escrito relacionado. Anterior/Próxima seguem
+// a ordem das aulas dentro do módulo; só a última passa para o módulo seguinte.
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+import Icon from "../../../components/Icon.astro";
+import Video from "../../../components/Video.astro";
+import { getLessonPositions, trainingSidebar, type LessonPosition } from "../../../lib/treinamento";
+
+export async function getStaticPaths() {
+  const positions = await getLessonPositions();
+  return positions.map((position) => ({
+    params: { modulo: position.module.slug, aula: position.lesson.slug },
+    props: position,
+  }));
+}
+
+type Props = LessonPosition;
+
+const { module, index, lesson, prev, next } = Astro.props;
+const total = module.lessons.length;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: lesson.title,
+    description: lesson.description,
+    tableOfContents: false,
+    pagefind: false,
+    prev: false,
+    next: false,
+  }}
+  sidebar={await trainingSidebar()}
+>
+  <div class="eu-course eu-aula not-content">
+    <p class="eu-crumb">
+      <a href="/treinamento/">Treinamento</a><span aria-hidden="true">/</span>
+      <a href={module.href}>Módulo {module.number}: {module.titulo}</a><span aria-hidden="true">/</span>
+      Aula {index + 1} de {total}
+    </p>
+    {lesson.description && <p class="eu-lead">{lesson.description}</p>}
+
+    {
+      lesson.video ? (
+        <Video slug={lesson.video.slug} label={`Vídeo da aula ${lesson.title}`} />
+      ) : (
+        <section class="eu-soon" aria-label="Vídeo da aula">
+          <span class="eu-soon__icon"><Icon name="play" size={28} /></span>
+          <p class="eu-soon__title">Vídeo em breve</p>
+          <p class="eu-soon__text">
+            {lesson.guide
+              ? "Esta aula ainda está sendo gravada. Enquanto isso, o guia escrito mostra o mesmo passo a passo."
+              : "Esta aula ainda está sendo gravada."}
+          </p>
+          {lesson.guide && (
+            <a class="eu-btn" href={lesson.guide.href}>
+              Ler o guia escrito
+              <Icon name="arrow" size={18} class="eu-btn__arrow" />
+            </a>
+          )}
+        </section>
+      )
+    }
+
+    <div class="eu-aula__bar" data-progress={JSON.stringify([{ slug: lesson.id, href: lesson.href, title: lesson.title }])}>
+      <button type="button" class="eu-btn eu-btn--ghost" data-lesson-toggle={lesson.id} aria-pressed="false">
+        <Icon name="check" size={18} />
+        <span data-label>Marcar como concluída</span>
+      </button>
+      {lesson.video && lesson.guide && (
+        <a class="eu-aula__guide" href={lesson.guide.href}>Ler o guia escrito: {lesson.guide.title}</a>
+      )}
+    </div>
+
+    <nav class="eu-aula__nav" aria-label="Aulas">
+      {
+        prev ? (
+          <a class="eu-aula__step" href={prev.href} rel="prev">
+            <span>Aula anterior</span>
+            <strong>{prev.title}</strong>
+          </a>
+        ) : (
+          <a class="eu-aula__step" href={module.href}>
+            <span>Início do módulo</span>
+            <strong>{module.titulo}</strong>
+          </a>
+        )
+      }
+      {
+        next ? (
+          <a class="eu-aula__step eu-aula__step--next" href={next.lesson.href} rel="next">
+            <span>{next.module === module ? "Próxima aula" : `Próximo módulo: ${next.module.titulo}`}</span>
+            <strong>{next.lesson.title}</strong>
+          </a>
+        ) : (
+          <a class="eu-aula__step eu-aula__step--next" href="/treinamento/">
+            <span>Fim do Treinamento</span>
+            <strong>Voltar à visão geral</strong>
+          </a>
+        )
+      }
+    </nav>
+  </div>
+</StarlightPage>
+
+<script>
+  import "../../../scripts/treinamento";
+</script>

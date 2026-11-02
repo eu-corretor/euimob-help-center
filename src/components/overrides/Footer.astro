@@ -1,9 +1,10 @@
 ---
-// "Revisado em <data> · versão <x>" antes do rodapé padrão (anterior/próximo).
+// "Revisado em <data> · versão <x>" antes do rodapé padrão (anterior/próximo),
+// e a saída para quando o guia não resolveu: perguntar à Clara.
 import Default from "@astrojs/starlight/components/Footer.astro";
 
 const { entry } = Astro.locals.starlightRoute;
-const { verificado_em, versao_sistema } = entry.data;
+const { verificado_em, versao_sistema, hero } = entry.data;
 const revisado = verificado_em?.toLocaleDateString("pt-BR", { timeZone: "UTC" });
 ---
 
@@ -16,3 +17,10 @@ const revisado = verificado_em?.toLocaleDateString("pt-BR", { timeZone: "UTC" })
   )
 }
 <Default><slot /></Default>
+{
+  !hero && (
+    <p class="eu-footer-help">
+      Não resolveu? Pergunte à Clara dentro do sistema, em <strong>Conversas → Clara</strong>.
+    </p>
+  )
+}

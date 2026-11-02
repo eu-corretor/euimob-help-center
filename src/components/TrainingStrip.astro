@@ -1,0 +1,36 @@
+---
+// Chamada do Treinamento na home: o curso em vídeo, separado dos guias, com o
+// progresso de quem já começou e o botão para continuar de onde parou.
+import Icon from "./Icon.astro";
+import { getModules, progressPayload, videoCount } from "../lib/treinamento";
+
+const modules = await getModules();
+const lessons = modules.flatMap((m) => m.lessons);
+const videos = videoCount(lessons);
+---
+
+<section class="eu-strip not-content" aria-labelledby="treinamento-chamada" data-progress={progressPayload(lessons)}>
+  <div class="eu-strip__copy">
+    <p class="eu-eyebrow">Treinamento em vídeo</p>
+    <h2 id="treinamento-chamada">Aprenda a plataforma do zero, módulo a módulo</h2>
+    <p>
+      {modules.length} módulos e {lessons.length} aulas, na ordem em que uma coisa depende da outra.{" "}
+      {videos === 0 ? "Os vídeos estão sendo gravados." : `${videos} aulas já com vídeo.`}
+    </p>
+    <ol class="eu-strip__modules">
+      {modules.map((m) => <li><a href={m.href}>{m.titulo}</a></li>)}
+    </ol>
+  </div>
+  <div class="eu-strip__action">
+    <p class="eu-strip__status"><span data-progress-count>0 de {lessons.length}</span> aulas concluídas</p>
+    <div class="eu-progress" data-progress-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso no Treinamento"><i></i></div>
+    <a class="eu-btn" href="/treinamento/" data-progress-next data-start-label="Ver o Treinamento" data-done-label="Ver o Treinamento">
+      <span data-label>Ver o Treinamento</span>
+      <Icon name="arrow" size={18} class="eu-btn__arrow" />
+    </a>
+  </div>
+</section>
+
+<script>
+  import "../scripts/treinamento";
+</script>

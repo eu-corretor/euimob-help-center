@@ -1,0 +1,97 @@
+/* Tokens da marca Eu Imob, iguais aos do euimob.com.br (--eu-site-* no CSS do
+   site), e o mapeamento para as variáveis do Starlight. Não usar o visual da
+   Eu Corretor (Roboto, #f4f5f7, raio 16, faixa azul): a referência é o site. */
+
+:root {
+  --eu-blue: #4164dd;
+  --eu-blue-dark: #2245be;
+  --eu-blue-soft: #c9d3f5;
+  --eu-orange: #fe9119;
+  --eu-orange-dark: #a85600;
+
+  --eu-radius-sm: 6px;
+  --eu-radius: 10px;
+  --eu-radius-photo: 16px;
+  --eu-radius-card: 24px;
+  --eu-radius-pill: 999px;
+  --eu-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --eu-display: "Inter Tight", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --sl-font: var(--eu-display);
+  --sl-nav-height: 4.25rem;
+  --sl-content-width: 46rem;
+  --sl-text-h1: 2.5rem;
+  --sl-text-h2: 1.75rem;
+  --sl-text-h3: 1.3125rem;
+  --sl-text-h4: 1.125rem;
+  --sl-line-height: 1.65;
+}
+
+/* Tema escuro do site: grafite neutro. */
+:root,
+:root[data-theme="dark"] {
+  --eu-ground: #141416;
+  --eu-surface: #191919;
+  --eu-surface-alt: #1f1f22;
+  --eu-line: #2a2a2e;
+  --eu-ink: #ffffff;
+  --eu-ink-soft: #c9c9ce;
+  --eu-muted: #a3a3a8;
+  --eu-tint: #232a45;
+  --eu-tint-ink: #b9c8ff;
+  --eu-accent-ink: #8ea5f5;
+  --eu-header-bg: rgba(20, 20, 22, 0.88);
+  --eu-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+
+  --sl-color-white: var(--eu-ink);
+  --sl-color-gray-1: #ececf0;
+  --sl-color-gray-2: var(--eu-ink-soft);
+  --sl-color-gray-3: var(--eu-muted);
+  --sl-color-gray-4: #75757c;
+  --sl-color-gray-5: #3a3a40;
+  --sl-color-gray-6: var(--eu-surface);
+  --sl-color-black: var(--eu-ground);
+  --sl-color-accent-low: #1d2440;
+  --sl-color-accent: #7d97f2;
+  --sl-color-accent-high: #c7d3ff;
+  --sl-color-orange: var(--eu-orange);
+  --sl-color-bg-nav: var(--eu-header-bg);
+  --sl-color-bg-sidebar: var(--eu-ground);
+  --sl-color-hairline: var(--eu-line);
+  --sl-color-hairline-light: #34343a;
+  --sl-color-hairline-shade: #0c0c0d;
+}
+
+:root[data-theme="light"] {
+  --eu-ground: #ffffff;
+  --eu-surface: #ffffff;
+  --eu-surface-alt: #f7f8fd;
+  --eu-line: #e2e6f5;
+  --eu-ink: #171a2c;
+  --eu-ink-soft: #3a3f58;
+  --eu-muted: #5d6483;
+  --eu-tint: #eef1fb;
+  --eu-tint-ink: var(--eu-blue-dark);
+  --eu-accent-ink: var(--eu-blue);
+  --eu-header-bg: rgba(255, 255, 255, 0.92);
+  --eu-shadow: 0 18px 44px rgba(34, 69, 190, 0.1);
+
+  --sl-color-white: var(--eu-ink);
+  --sl-color-gray-1: #23273b;
+  --sl-color-gray-2: var(--eu-ink-soft);
+  --sl-color-gray-3: var(--eu-muted);
+  --sl-color-gray-4: #8a90aa;
+  --sl-color-gray-5: #cdd3ea;
+  --sl-color-gray-6: var(--eu-line);
+  --sl-color-gray-7: var(--eu-surface-alt);
+  --sl-color-black: #ffffff;
+  --sl-color-accent-low: var(--eu-tint);
+  --sl-color-accent: var(--eu-blue);
+  --sl-color-accent-high: var(--eu-blue-dark);
+  --sl-color-orange: var(--eu-orange);
+  --sl-color-bg-nav: var(--eu-header-bg);
+  --sl-color-bg-sidebar: var(--eu-surface-alt);
+  --sl-color-hairline: var(--eu-line);
+  --sl-color-hairline-light: var(--eu-line);
+  --sl-color-hairline-shade: var(--eu-line);
+}

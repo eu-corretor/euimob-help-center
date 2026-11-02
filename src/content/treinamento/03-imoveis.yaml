@@ -1,0 +1,43 @@
+titulo: Imóveis
+descricao: Da captação ao anúncio no ar, aba por aba.
+ordem: 3
+quem: [corretor, gestor]
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: cadastrar-um-imovel
+    titulo: "Cadastrar um imóvel"
+    descricao: "O caminho curto para criar a ficha de um imóvel, salvar como rascunho e deixar pronta para publicar."
+    guia: imoveis/cadastrar-um-imovel
+  - slug: nome-do-imovel
+    titulo: "Nome do imóvel: automático ou escrito por você"
+    descricao: "Como a plataforma monta o nome do imóvel, como escrever um nome próprio e como voltar ao automático."
+    guia: imoveis/nome-do-imovel
+  - slug: preencher-os-detalhes-do-imovel
+    titulo: "Preencher os detalhes do imóvel"
+    descricao: "A aba Detalhes: tipo, condição, finalidade, preços, cômodos, áreas, características e atributos."
+    guia: imoveis/preencher-os-detalhes-do-imovel
+  - slug: endereco-e-localizacao-no-mapa
+    titulo: "Endereço, localização no mapa e imóveis próximos"
+    descricao: "Preencher o endereço pelo CEP, marcar o ponto exato do imóvel com o Plus Code e entender as sugestões de imóveis próximos."
+    guia: imoveis/endereco-e-localizacao-no-mapa
+  - slug: responsaveis-proprietarios-e-dados-internos
+    titulo: "Responsáveis, proprietários e dados internos"
+    descricao: "Quem cuida do imóvel, de quem ele é (com a fração de cada dono) e os dados que nunca vão para o anúncio."
+    guia: imoveis/responsaveis-proprietarios-e-dados-internos
+  - slug: fotos-do-imovel
+    titulo: "Fotos do imóvel"
+    descricao: "Enviar as fotos, escolher a capa, mudar a ordem, usar a marca d'água e baixar todas de uma vez."
+    guia: imoveis/fotos-do-imovel
+  - slug: ia-no-imovel
+    titulo: "Descrição, post e análise de fotos com IA"
+    descricao: "Gerar a descrição do anúncio, o texto de um post e as comodidades a partir das fotos, e quanto cada um gasta de créditos."
+    guia: imoveis/ia-no-imovel
+  - slug: pre-visualizar-o-anuncio
+    titulo: "Pré-visualizar o anúncio no site"
+    descricao: "Ver a página do imóvel exatamente como o cliente vai ver, antes de publicar."
+    guia: imoveis/pre-visualizar-o-anuncio
+  - slug: publicar-um-imovel
+    titulo: "Publicar um imóvel e os status"
+    descricao: "Colocar o imóvel no ar, tirar do ar, marcar como vendido ou cancelado, e o que cada status significa."
+    guia: imoveis/publicar-um-imovel

@@ -1,0 +1,54 @@
+---
+// Hero da home: o balcão. A pergunta, a busca grande (abre a mesma busca do
+// cabeçalho) e as dúvidas mais comuns como atalhos (`hero.actions` no index.mdx).
+import Icon from "../Icon.astro";
+import { getGuides } from "../../lib/guides";
+
+const { data } = Astro.locals.starlightRoute.entry;
+const { title = data.title, tagline, actions = [] } = data.hero ?? {};
+const total = (await getGuides()).length;
+// O mesmo id que o Starlight dá ao título da página (âncora "voltar ao topo").
+const PAGE_TITLE_ID = "_top";
+---
+
+<section class="eu-hero" aria-labelledby={PAGE_TITLE_ID}>
+  <div class="eu-hero__inner">
+    <p class="eu-hero__count">{total} guias, para ler com o sistema aberto do lado</p>
+    <h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
+    {tagline && <p class="eu-hero__tagline" set:html={tagline} />}
+    <button type="button" class="eu-hero__search" data-eu-search aria-keyshortcuts="Control+K">
+      <Icon name="search" size={22} />
+      <span>Busque uma tarefa: publicar imóvel, convidar usuário, régua de cobrança…</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+    {
+      actions.length > 0 && (
+        <div class="eu-hero__common">
+          <p id="eu-hero-common">Dúvidas comuns</p>
+          <ul aria-labelledby="eu-hero-common">
+            {actions.map(({ text, link }) => (
+              <li><a href={link}>{text}</a></li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  // O botão grande abre o diálogo de busca do Starlight (o mesmo do cabeçalho).
+  document.querySelectorAll<HTMLButtonElement>("[data-eu-search]").forEach((button) => {
+    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+      const kbd = button.querySelector("kbd");
+      if (kbd) kbd.textContent = "⌘ K";
+      button.setAttribute("aria-keyshortcuts", "Meta+K");
+    }
+    button.addEventListener("click", (event) => {
+      // O Starlight fecha o diálogo em todo clique fora dele que chega à window;
+      // sem isto, este mesmo clique abriria e fecharia a busca no mesmo instante.
+      event.stopPropagation();
+      document.querySelector<HTMLButtonElement>("site-search button[data-open-modal]")?.click();
+    });
+  });
+</script>
