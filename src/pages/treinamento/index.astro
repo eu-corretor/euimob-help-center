@@ -1,0 +1,76 @@
+---
+// /treinamento — o curso em vídeo da plataforma: módulos em ordem, cada aula
+// com página própria. É separado dos guias; o guia escrito fica linkado na aula.
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+import Icon from "../../components/Icon.astro";
+import { getModules, progressPayload, QUEM_LABEL, totalDuration, trainingSidebar, videoCount } from "../../lib/treinamento";
+
+const modules = await getModules();
+const lessons = modules.flatMap((m) => m.lessons);
+const videos = videoCount(lessons);
+const duration = totalDuration(lessons);
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "Treinamento Eu Imob",
+    description: "O curso em vídeo da plataforma Eu Imob, do primeiro acesso ao dia a dia, módulo a módulo.",
+    tableOfContents: false,
+    pagefind: false,
+    prev: false,
+    next: false,
+  }}
+  sidebar={await trainingSidebar()}
+>
+  <div class="eu-course not-content">
+    <p class="eu-lead">
+      O curso em vídeo da plataforma, do primeiro acesso ao dia a dia. São {modules.length} módulos e {lessons.length} aulas,
+      na ordem em que uma coisa depende da outra.
+      {videos === 0 ? " Os vídeos estão sendo gravados; enquanto isso, cada aula leva ao guia escrito." : ""}
+    </p>
+
+    <section class="eu-course__summary" aria-label="Seu progresso" data-progress={progressPayload(lessons)}>
+      <div class="eu-course__progress">
+        <p>
+          <span data-progress-count>0 de {lessons.length}</span> aulas concluídas
+          {duration && <> · {duration} de vídeo</>}
+        </p>
+        <div class="eu-progress" data-progress-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso no Treinamento"><i></i></div>
+        <p class="eu-course__note">O progresso fica salvo neste navegador.</p>
+      </div>
+      <a class="eu-btn" href={lessons[0]?.href} data-progress-next data-start-label="Começar pela primeira aula" data-done-label="Rever desde o início">
+        <span data-label>Começar pela primeira aula</span>
+        <Icon name="arrow" size={18} class="eu-btn__arrow" />
+      </a>
+    </section>
+
+    <ol class="eu-modules">
+      {modules.map((m) => (
+        <li data-progress={progressPayload(m.lessons)}>
+          <a class="eu-module" href={m.href}>
+            <span class="eu-module__n" aria-hidden="true">{String(m.number).padStart(2, "0")}</span>
+            <span class="eu-module__title">
+              <span class="eu-module__name"><span class="sr-only">Módulo {m.number}: </span>{m.titulo}</span>
+              <span class="eu-module__desc">{m.descricao}</span>
+              <span class="eu-module__meta">
+                {m.lessons.length} {m.lessons.length === 1 ? "aula" : "aulas"}
+                {m.quem.length > 0 && ` · para ${m.quem.map((q) => QUEM_LABEL[q]).join(", ").toLowerCase()}`}
+                {m.opcional && " · opcional"}
+              </span>
+            </span>
+            <span class="eu-module__progress">
+              <span data-progress-count>0 de {m.lessons.length}</span>
+              <span class="eu-progress" data-progress-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label={`Progresso do módulo ${m.titulo}`}><i></i></span>
+            </span>
+            <Icon name="arrow" size={20} class="eu-card-arrow" />
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</StarlightPage>
+
+<script>
+  import "../../scripts/treinamento";
+</script>

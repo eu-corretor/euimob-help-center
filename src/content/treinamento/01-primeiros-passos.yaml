@@ -1,0 +1,15 @@
+titulo: Primeiros passos
+descricao: Montar a equipe e saber onde pedir ajuda dentro do sistema.
+ordem: 1
+quem: [gestor]
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: convidar-um-usuario
+    titulo: "Convidar um usuário"
+    descricao: "Como criar o acesso de uma pessoa da equipe, escolher os papéis e exigir a verificação em duas etapas."
+    guia: conta/convidar-um-usuario
+  - slug: tirar-duvidas-com-a-clara
+    titulo: "Tirar dúvidas com a Clara"
+    descricao: "Como conversar com a Clara no Discuss para tirar dúvidas de uso e consultar os seus dados."
+    guia: ia/tirar-duvidas-com-a-clara

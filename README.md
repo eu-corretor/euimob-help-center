@@ -1,6 +1,6 @@
-# Central de Ajuda EuImob
+# Central de Ajuda Eu Imob
 
-Guias passo a passo e vídeos para quem usa a plataforma EuImob, publicados em
+Guias passo a passo e vídeos para quem usa a plataforma Eu Imob, publicados em
 <https://ajuda.euimob.com.br>. Este repositório é a **fonte única**: o que a
 pessoa lê na central é o que a Clara (a assistente dentro do sistema) consulta
 para responder dúvidas de uso.

@@ -1,0 +1,64 @@
+titulo: Locação
+descricao: O ciclo de um contrato de aluguel, das configurações ao fechamento do ano. Só para quem contratou a Locação.
+ordem: 6
+quem: [gestor, financeiro]
+opcional: true
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: configuracoes-de-locacao
+    titulo: "Configurações de Locação: taxa de administração, dia do repasse, periodicidade"
+    descricao: "O que configurar antes do primeiro contrato: habilitação, contabilidade, faturamento, cobrança, checklist, repasse e reajuste."
+    guia: locacao/configuracoes-de-locacao
+  - slug: cadastrar-proprietario-e-padroes-de-contrato
+    titulo: "Cadastrar proprietário e padrões de contrato"
+    descricao: "Como cadastrar o proprietário de um imóvel com a forma de repasse e montar os padrões que os contratos novos herdam."
+    guia: locacao/cadastrar-proprietario-e-padroes-de-contrato
+  - slug: checklist-documental
+    titulo: "Checklist documental: carregar e conferir"
+    descricao: "Como marcar uma oportunidade como locação, carregar a lista de documentos e conferir o que já chegou antes de gerar o contrato."
+    guia: locacao/checklist-documental
+  - slug: gerar-o-contrato-a-partir-da-oportunidade
+    titulo: "Gerar o contrato a partir da oportunidade"
+    descricao: "Como transformar a oportunidade de locação num contrato em rascunho e preencher as abas do contrato antes da assinatura."
+    guia: locacao/gerar-o-contrato-a-partir-da-oportunidade
+  - slug: enviar-para-assinatura-e-ativar
+    titulo: "Enviar o contrato para assinatura e ativar"
+    descricao: "Como mandar o contrato para assinatura eletrônica, acompanhar quem já assinou e ativar a locação para começar a faturar."
+    guia: locacao/enviar-para-assinatura-e-ativar
+  - slug: faturas-mensais
+    titulo: "Faturas mensais: gerar, conferir e pausar a cobrança"
+    descricao: "Como as faturas de aluguel nascem, o que conferir todo mês, como antecipar uma fatura e como pausar a régua de cobrança de um locatário em negociação."
+    guia: locacao/faturas-mensais
+  - slug: regua-de-cobranca
+    titulo: "Régua de cobrança: criar a padrão, acompanhar, reenviar"
+    descricao: "Como ligar a régua de cobrança, criar a régua padrão da imobiliária, acompanhar os disparos de cada fatura e reenviar um aviso."
+    guia: locacao/regua-de-cobranca
+  - slug: repasses-ao-proprietario
+    titulo: "Repasses ao proprietário: liberar, reter, extrato"
+    descricao: "Como o repasse nasce da fatura paga, como liberar ou reter, registrar o pagamento ao proprietário e emitir o extrato."
+    guia: locacao/repasses-ao-proprietario
+  - slug: reajuste-do-aluguel
+    titulo: "Reajuste: preparar, aplicar, aviso ao locatário"
+    descricao: "Como o reajuste anual é preparado pelo índice, como aplicar ou combinar um valor à mão, e como avisar locatário e proprietário."
+    guia: locacao/reajuste-do-aluguel
+  - slug: renovacao-de-contrato
+    titulo: "Renovação de contrato"
+    descricao: "Como renovar um contrato que chegou ao fim: iniciar a renovação, registrar o aditivo com o novo prazo e valor, e reativar."
+    guia: locacao/renovacao-de-contrato
+  - slug: rescisao-e-termo-de-quitacao
+    titulo: "Rescisão e termo de quitação"
+    descricao: "Como rescindir um contrato: motivo, data da saída, acerto de contas com multa e caução, fatura do acerto e o termo de quitação."
+    guia: locacao/rescisao-e-termo-de-quitacao
+  - slug: dimob
+    titulo: "DIMOB: apurar o ano, gerar arquivo, enviar informes"
+    descricao: "Como apurar a DIMOB do ano-calendário, resolver as pendências da auditoria, gerar o arquivo da Receita e mandar o informe de rendimentos aos proprietários."
+    guia: locacao/dimob
+  - slug: relatorios-de-locacao
+    titulo: "Relatórios: vacância, inadimplência, repasses, funil de locação"
+    descricao: "O que cada um dos oito relatórios de locação responde, como abrir em lista ou pivô e como agrupar."
+    guia: locacao/relatorios-de-locacao
+  - slug: o-painel-de-locacao
+    titulo: "O painel de locação"
+    descricao: "O que cada bloco do painel mostra, de onde vem cada número e como chegar à lista por trás de um indicador."
+    guia: locacao/o-painel-de-locacao

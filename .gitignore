@@ -9,3 +9,6 @@ npm-debug.log*
 public/corpus/
 public/index.json
 .wrangler/
+
+# Rascunho da skill de design (prints, mockups, brief); não faz parte do site
+.impeccable/

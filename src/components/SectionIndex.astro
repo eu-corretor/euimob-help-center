@@ -1,0 +1,45 @@
+---
+// Índice de todas as seções, na ordem do menu. Cada card inteiro é um link
+// para /guias/<seção>/, com a descrição e os primeiros guias como prévia.
+// As seções sem guia publicado aparecem juntas, numa linha, como "em produção".
+import Icon from "./Icon.astro";
+import { getSections } from "../lib/guides";
+import type { IconName } from "../lib/icons";
+
+const PREVIEW = 3;
+const sections = await getSections();
+const ready = sections.filter((s) => s.guides.length > 0);
+const pending = sections.filter((s) => s.guides.length === 0);
+---
+
+<section class="eu-index not-content" aria-labelledby="secoes">
+  <h2 id="secoes">Por assunto</h2>
+  <p class="eu-index__intro">Cada seção é uma parte da plataforma. Os guias estão na ordem em que você usa.</p>
+  <ul class="eu-index__grid">
+    {ready.map(({ directory, label, description, guides }) => (
+      <li>
+        <a class="eu-index__section" href={`/guias/${directory}/`}>
+          <span class="eu-index__head">
+            <span class="eu-index__icon"><Icon name={directory as IconName} size={20} /></span>
+            <span class="eu-index__name">{label}</span>
+          </span>
+          {description && <span class="eu-index__desc">{description}</span>}
+          <span class="eu-index__preview">
+            {guides.slice(0, PREVIEW).map((g) => <span>{g.data.title}</span>)}
+          </span>
+          <span class="eu-index__count">
+            {guides.length} {guides.length === 1 ? "guia" : "guias"}
+          </span>
+          <Icon name="arrow" size={20} class="eu-card-arrow" />
+        </a>
+      </li>
+    ))}
+  </ul>
+  {
+    pending.length > 0 && (
+      <p class="eu-index__pending">
+        <strong>Em produção:</strong> {pending.map((s) => s.label).join(", ")}. Enquanto o guia não sai, a Clara responde.
+      </p>
+    )
+  }
+</section>

@@ -23,12 +23,44 @@ export const collections = {
   }),
   videos: defineCollection({
     loader: glob({ pattern: "**/*.yaml", base: "./src/content/videos" }),
+    // O vídeo fica no YouTube (`youtube_id`) ou no Google Drive (`drive_id`,
+    // arquivo compartilhado com "qualquer pessoa com o link"). Capítulos só
+    // funcionam no YouTube, que aceita começar num minuto; no Drive, ficam vazios.
+    schema: z
+      .object({
+        youtube_id: z.string().optional(),
+        drive_id: z.string().optional(),
+        duracao: z.string().regex(/^\d{1,2}:\d{2}$/),
+        verificado_em: z.coerce.date(),
+        capitulos: z
+          .array(z.object({ t: z.string().regex(/^\d{1,2}:\d{2}$/), assunto: z.string() }))
+          .default([]),
+      })
+      .refine((v) => Boolean(v.youtube_id) !== Boolean(v.drive_id), {
+        message: "Informe youtube_id ou drive_id (um dos dois).",
+      }),
+  }),
+  // Módulos do Treinamento (/treinamento): o curso em vídeo, separado dos
+  // guias. Cada aula tem página própria; `guia` só aponta para o guia escrito
+  // relacionado, e `video` é o slug em src/content/videos.
+  treinamento: defineCollection({
+    loader: glob({ pattern: "**/*.yaml", base: "./src/content/treinamento" }),
     schema: z.object({
-      youtube_id: z.string(),
-      duracao: z.string().regex(/^\d{1,2}:\d{2}$/),
-      verificado_em: z.coerce.date(),
-      capitulos: z
-        .array(z.object({ t: z.string().regex(/^\d{1,2}:\d{2}$/), assunto: z.string() }))
+      titulo: z.string(),
+      descricao: z.string(),
+      ordem: z.number().int(),
+      quem: z.array(z.enum(["gestor", "corretor", "financeiro"])).default([]),
+      opcional: z.boolean().default(false),
+      aulas: z
+        .array(
+          z.object({
+            slug: z.string().regex(/^[a-z0-9-]+$/),
+            titulo: z.string(),
+            descricao: z.string().default(""),
+            video: z.string().optional(),
+            guia: z.string().optional(),
+          })
+        )
         .min(1),
     }),
   }),

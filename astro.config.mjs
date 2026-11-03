@@ -1,41 +1,30 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { satteri } from "@astrojs/markdown-satteri";
 
-import { SITE } from "./site.config.mjs";
-
-// Uma seção por funcionalidade contratada, na ordem em que aparecem no menu.
-// Pasta nova em src/content/docs = entrada nova aqui.
-export const SECTIONS = [
-  { directory: "trilhas", label: "Trilhas" },
-  { directory: "conta", label: "Conta e acesso" },
-  { directory: "inicio", label: "Início" },
-  { directory: "contatos", label: "Contatos" },
-  { directory: "imoveis", label: "Imóveis" },
-  { directory: "crm", label: "CRM" },
-  { directory: "financeiro", label: "Financeiro" },
-  { directory: "locacao", label: "Locação" },
-  { directory: "site", label: "Site" },
-  { directory: "whatsapp", label: "WhatsApp" },
-  { directory: "redes-sociais", label: "Redes Sociais" },
-  { directory: "assinatura-eletronica", label: "Assinatura Eletrônica" },
-  { directory: "integracoes", label: "Integrações" },
-  { directory: "ia", label: "IA" },
-  { directory: "migracao", label: "Migração" },
-];
+import { SECTIONS, SITE } from "./site.config.mjs";
+import guideHeader from "./src/lib/guide-header-plugin.mjs";
 
 export default defineConfig({
   site: SITE,
+  markdown: {
+    // Cabeçalho "Caminho / Atalho / Quem faz" de cada guia vira um bloco (ver o plugin).
+    processor: satteri({ hastPlugins: [guideHeader] }),
+  },
   integrations: [
     starlight({
-      title: "Central de Ajuda EuImob",
-      description: "Guias e vídeos para quem usa a plataforma EuImob.",
+      title: "Central de Ajuda Eu Imob",
+      description: "Guias e vídeos para quem usa a plataforma Eu Imob.",
       defaultLocale: "root",
       locales: { root: { label: "Português (Brasil)", lang: "pt-BR" } },
-      logo: { src: "./src/assets/logo.svg", alt: "EuImob" },
+      logo: { src: "./src/assets/logo.svg", alt: "Eu Imob" },
       favicon: "/favicon.svg",
-      customCss: ["./src/styles/custom.css"],
+      customCss: ["./src/styles/fonts.css", "./src/styles/tokens.css", "./src/styles/components.css"],
       components: {
+        Header: "./src/components/overrides/Header.astro",
+        SiteTitle: "./src/components/overrides/SiteTitle.astro",
+        Hero: "./src/components/overrides/Hero.astro",
         PageTitle: "./src/components/overrides/PageTitle.astro",
         Footer: "./src/components/overrides/Footer.astro",
       },

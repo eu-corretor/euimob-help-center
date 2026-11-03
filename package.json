@@ -2,7 +2,7 @@
   "name": "euimob-help-center",
   "version": "0.1.0",
   "private": true,
-  "description": "Central de ajuda da EuImob: guias, vídeos e o corpus que a Clara consulta.",
+  "description": "Central de ajuda da Eu Imob: guias, vídeos e o corpus que a Clara consulta.",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -13,6 +13,7 @@
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.2",
     "@astrojs/starlight": "^0.42.4",
     "astro": "^7.3.5",
     "sharp": "^0.35.5"

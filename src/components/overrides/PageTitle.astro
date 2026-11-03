@@ -1,11 +1,49 @@
 ---
-// Título da página e, quando o guia declara `video`, o player logo abaixo.
+// Moldura do topo de cada guia: seção, título, a frase de descrição, para quem
+// é e o tempo; o vídeo quando o guia declara `video`; e um link para a aula em
+// vídeo quando alguma aula do Treinamento aponta para este guia.
 import Default from "@astrojs/starlight/components/PageTitle.astro";
+import { getCollection } from "astro:content";
+
+import Icon from "../Icon.astro";
 import Video from "../Video.astro";
+import { readingMinutes, sectionLabel, type Guide } from "../../lib/guides";
+import { lessonForGuide, QUEM_LABEL } from "../../lib/treinamento";
 
 const { entry } = Astro.locals.starlightRoute;
-const video = entry.data.video;
+// Páginas montadas com StarlightPage (Treinamento, /guias/<seção>/) recebem um
+// filePath falso dentro de docs; só é guia o que existe na coleção.
+const isGuide =
+  entry.id.includes("/") && (await getCollection("docs", (d) => d.id === entry.id)).length > 0;
+const section = isGuide ? sectionLabel(entry.id) : null;
+const { video, quem = [], description } = entry.data;
+const aula = isGuide ? await lessonForGuide(entry.id) : null;
+const minutes = isGuide ? readingMinutes(entry as unknown as Guide) : 0;
 ---
 
+{section && section.directory !== "trilhas" && (
+  <p class="eu-crumb"><a href={`/guias/${section.directory}/`}>{section.label}</a></p>
+)}
 <Default><slot /></Default>
+{isGuide && description && <p class="eu-lead">{description}</p>}
+{
+  isGuide && (quem.length > 0 || minutes > 0) && (
+    <ul class="eu-meta" aria-label="Sobre este guia">
+      {quem.length > 0 && <li>Para {quem.map((q: string) => QUEM_LABEL[q] ?? q).join(", ").toLowerCase()}</li>}
+      <li>{minutes} min de leitura</li>
+      {video && <li>Com vídeo</li>}
+    </ul>
+  )
+}
 {video && <Video slug={video} />}
+{
+  aula && (
+    <a class="eu-to-lesson" href={aula.lesson.href}>
+      <Icon name="play" size={16} />
+      <span>
+        {aula.lesson.video ? "Assistir à aula em vídeo" : "Aula em vídeo no Treinamento (em breve)"}
+        <span class="eu-to-lesson__where"> · Módulo {aula.module.number}: {aula.module.titulo}</span>
+      </span>
+    </a>
+  )
+}
