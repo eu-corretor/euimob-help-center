@@ -1423,6 +1423,10 @@ html[data-has-hero] {
     max-height: 100%;
     overflow-y: auto;
   }
+  /* Sem capítulos (vídeos do Drive): o player ocupa a largura toda. */
+  .eu-video--solo {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* ---------- Movimento ---------- */

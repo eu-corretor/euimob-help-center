@@ -1,5 +1,5 @@
 titulo: Imóveis
-descricao: Da captação ao anúncio no ar, aba por aba.
+descricao: "Do cadastro ao anúncio no ar, aba por aba; depois, achar imóveis na lista, condomínios e os ajustes de cadastro."
 ordem: 3
 quem: [corretor, gestor]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
@@ -9,6 +9,7 @@ aulas:
     titulo: "Cadastrar um imóvel"
     descricao: "O caminho curto para criar a ficha de um imóvel, salvar como rascunho e deixar pronta para publicar."
     guia: imoveis/cadastrar-um-imovel
+    video: imoveis-cadastrar-um-imovel
   - slug: nome-do-imovel
     titulo: "Nome do imóvel: automático ou escrito por você"
     descricao: "Como a plataforma monta o nome do imóvel, como escrever um nome próprio e como voltar ao automático."
@@ -41,3 +42,26 @@ aulas:
     titulo: "Publicar um imóvel e os status"
     descricao: "Colocar o imóvel no ar, tirar do ar, marcar como vendido ou cancelado, e o que cada status significa."
     guia: imoveis/publicar-um-imovel
+  - slug: filtros-e-agrupamentos
+    titulo: "Filtros e agrupamentos na lista de imóveis"
+    descricao: "Achar imóveis pelo painel lateral (tipo, cidade, responsável, condomínio, marcadores), pela busca, com filtros personalizados e agrupando a lista."
+    video: imoveis-filtros-e-agrupamentos
+  - slug: condominios
+    titulo: "Condomínios: cadastrar e vincular unidades"
+    descricao: "Cadastrar um condomínio ou empreendimento, ligar os imóveis a ele e publicar a página do condomínio no site."
+    guia: imoveis/condominios
+    video: imoveis-condominios
+  - slug: tipos-de-imovel-personalizados
+    titulo: "Tipos de imóvel personalizados"
+    descricao: "Criar um tipo de imóvel que não está na lista, escolher o tipo equivalente no VivaReal e marcar se é terreno ou rural na DIMOB."
+    guia: imoveis/cadastros-auxiliares
+    video: imoveis-tipo-imovel-personalizado
+  - slug: comodidades-personalizadas
+    titulo: "Comodidades personalizadas"
+    descricao: "Incluir uma comodidade que não está na lista que o corretor marca na ficha do imóvel."
+    guia: imoveis/cadastros-auxiliares
+    video: imoveis-comodidades-personalizadas
+  - slug: configuracoes-de-imoveis
+    titulo: "Configurações de Imóveis: marca d'água e imóveis próximos"
+    descricao: "Escolher o logo da marca d'água, o tamanho e a transparência, se ela vem ligada nos imóveis novos, e o raio dos imóveis próximos."
+    guia: imoveis/configuracoes-de-imoveis

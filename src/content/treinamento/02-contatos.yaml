@@ -1,0 +1,11 @@
+titulo: Contatos
+descricao: "As pessoas e empresas com quem você trabalha: clientes, proprietários e parceiros."
+ordem: 2
+quem: [gestor, corretor]
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: cadastrar-um-contato
+    titulo: "Cadastrar um contato"
+    descricao: "Como cadastrar uma pessoa ou empresa em Contatos, com CPF/CNPJ e endereço pelo CEP."
+    guia: contatos/cadastrar-um-contato

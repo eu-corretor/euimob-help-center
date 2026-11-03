@@ -23,14 +23,22 @@ export const collections = {
   }),
   videos: defineCollection({
     loader: glob({ pattern: "**/*.yaml", base: "./src/content/videos" }),
-    schema: z.object({
-      youtube_id: z.string(),
-      duracao: z.string().regex(/^\d{1,2}:\d{2}$/),
-      verificado_em: z.coerce.date(),
-      capitulos: z
-        .array(z.object({ t: z.string().regex(/^\d{1,2}:\d{2}$/), assunto: z.string() }))
-        .min(1),
-    }),
+    // O vídeo fica no YouTube (`youtube_id`) ou no Google Drive (`drive_id`,
+    // arquivo compartilhado com "qualquer pessoa com o link"). Capítulos só
+    // funcionam no YouTube, que aceita começar num minuto; no Drive, ficam vazios.
+    schema: z
+      .object({
+        youtube_id: z.string().optional(),
+        drive_id: z.string().optional(),
+        duracao: z.string().regex(/^\d{1,2}:\d{2}$/),
+        verificado_em: z.coerce.date(),
+        capitulos: z
+          .array(z.object({ t: z.string().regex(/^\d{1,2}:\d{2}$/), assunto: z.string() }))
+          .default([]),
+      })
+      .refine((v) => Boolean(v.youtube_id) !== Boolean(v.drive_id), {
+        message: "Informe youtube_id ou drive_id (um dos dois).",
+      }),
   }),
   // Módulos do Treinamento (/treinamento): o curso em vídeo, separado dos
   // guias. Cada aula tem página própria; `guia` só aponta para o guia escrito

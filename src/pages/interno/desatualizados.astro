@@ -16,7 +16,11 @@ const docs = (await getCollection("docs", ({ data }) => !data.draft))
 
 const videos = (await getCollection("videos"))
   .filter(({ data }) => isStale(data.verificado_em))
-  .map(({ id, data }) => ({ id, youtube: data.youtube_id, verificado: fmt(data.verificado_em) }));
+  .map(({ id, data }) => ({
+    id,
+    url: data.youtube_id ? `https://youtu.be/${data.youtube_id}` : `https://drive.google.com/file/d/${data.drive_id}/view`,
+    verificado: fmt(data.verificado_em),
+  }));
 ---
 
 <StarlightPage
@@ -46,7 +50,7 @@ const videos = (await getCollection("videos"))
       <thead><tr><th>Vídeo</th><th>Verificado em</th></tr></thead>
       <tbody>
         {videos.map((v) => (
-          <tr><td><a href={`https://youtu.be/${v.youtube}`}>{v.id}</a></td><td>{v.verificado}</td></tr>
+          <tr><td><a href={v.url}>{v.id}</a></td><td>{v.verificado}</td></tr>
         ))}
       </tbody>
     </table>
