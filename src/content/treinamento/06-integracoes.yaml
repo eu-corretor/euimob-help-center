@@ -1,0 +1,19 @@
+titulo: Integrações
+descricao: Enviar os seus imóveis para os portais, trazer os imóveis das construtoras e criar o catálogo no Facebook.
+ordem: 6
+quem: [gestor]
+# Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
+# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+aulas:
+  - slug: enviar-imoveis-para-portais
+    titulo: "Enviar imóveis para portais imobiliários"
+    descricao: "Criar a integração com o portal, escolher o que enviar e receber os leads no CRM. Copie os links do XML e de leads só depois de salvar: eles mudam ao salvar."
+    video: integracoes-portais-imobiliarios
+  - slug: trazer-imoveis-de-construtoras
+    titulo: "Trazer imóveis de construtoras"
+    descricao: "Integrar com DWV, Studio 360 ou Órulo usando as credenciais do provedor e sincronizar para trazer os imóveis ao seu sistema."
+    video: integracoes-construtoras
+  - slug: catalogo-de-imoveis-no-facebook
+    titulo: "Criar um catálogo de imóveis no Facebook"
+    descricao: "Criar no Gerenciador de Comércio um catálogo específico de imóveis, porque o comum não aceita o link, e carregar o link do XML da sua integração para manter os anúncios atualizados."
+    video: integracoes-catalogo-facebook

@@ -1,6 +1,6 @@
 titulo: Locação
 descricao: O ciclo de um contrato de aluguel, das configurações ao fechamento do ano. Só para quem contratou a Locação.
-ordem: 6
+ordem: 7
 quem: [gestor, financeiro]
 opcional: true
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
