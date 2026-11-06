@@ -9,3 +9,13 @@ aulas:
     titulo: "Cadastrar um contato"
     descricao: "Como cadastrar uma pessoa ou empresa em Contatos, com CPF/CNPJ e endereço pelo CEP."
     guia: contatos/cadastrar-um-contato
+  - slug: gerenciar-seus-contatos
+    titulo: "Gerenciar seus contatos"
+    descricao: "Escolher as colunas da lista, editar a ficha e o tipo do contato, registrar notas, ver o histórico e abrir as oportunidades ligadas a ele."
+    guia: contatos/cadastrar-um-contato
+    video: contatos-gerenciar-contatos
+  - slug: tipos-de-contato-personalizados
+    titulo: "Tipos de contato personalizados"
+    descricao: "Criar um tipo de contato próprio, como Investidor Estrangeiro, para classificar a sua base do jeito que a imobiliária trabalha."
+    guia: contatos/cadastrar-um-contato
+    video: contatos-tipo-de-contato-personalizado

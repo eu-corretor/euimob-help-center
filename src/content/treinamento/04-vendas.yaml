@@ -1,5 +1,5 @@
 titulo: Do cliente à comissão
-descricao: O cliente no pipeline e a comissão faturada quando o negócio fecha.
+descricao: O cliente no pipeline, o acompanhamento de cada negociação e a comissão faturada quando o negócio fecha; por último, as etapas e os funis.
 ordem: 4
 quem: [corretor, gestor, financeiro]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
@@ -9,7 +9,25 @@ aulas:
     titulo: "Cadastrar um cliente no pipeline"
     descricao: "Como registrar um cliente que chegou por telefone, plantão ou indicação e acompanhá-lo no funil até o ganho."
     guia: crm/cadastrar-um-cliente-no-pipeline
+  - slug: acompanhar-oportunidades-no-crm
+    titulo: "Acompanhar suas oportunidades no CRM"
+    descricao: "Ler o card, cuidar das atividades, preencher a oportunidade, ver os imóveis sugeridos, avançar no funil, marcar como ganho ou perdido e usar a IA."
+    guia: crm/cadastrar-um-cliente-no-pipeline
+    video: crm-acompanhar-oportunidades
+  - slug: filtrar-e-agrupar-oportunidades
+    titulo: "Filtrar e agrupar oportunidades"
+    descricao: "Achar oportunidades com os filtros prontos, agrupar por corretor ou cidade e criar um filtro personalizado."
+    guia: crm/cadastrar-um-cliente-no-pipeline
+    video: crm-filtrar-e-agrupar-oportunidades
   - slug: faturar-a-comissao
     titulo: "Faturar a comissão"
     descricao: "Como gerar as faturas de comissão de um negócio ganho, com rateio, e emitir a cobrança."
     guia: financeiro/faturar-a-comissao
+  - slug: personalizar-etapas-e-criar-funis
+    titulo: "Personalizar etapas e criar funis"
+    descricao: "Incluir e mover etapas, definir o que cada uma exige para avançar e criar funis separados, como um de vendas e outro de locação."
+    video: crm-etapas-e-funis
+  - slug: etapas-por-funil
+    titulo: "Definir em quais funis cada etapa aparece"
+    descricao: "Usar as mesmas etapas em mais de um funil e limitar uma etapa aos funis certos, como uma análise de documentos só na locação. Sem funil marcado, a etapa aparece em todos."
+    video: crm-etapas-por-funil
