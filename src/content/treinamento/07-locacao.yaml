@@ -4,7 +4,7 @@ ordem: 7
 quem: [gestor, financeiro]
 opcional: true
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
-# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+# (opcional); `video` é o slug em src/content/videos (sem ele, a aula fica fora do site até ter vídeo).
 aulas:
   - slug: configuracoes-de-locacao
     titulo: "Configurações de Locação: taxa de administração, dia do repasse, periodicidade"

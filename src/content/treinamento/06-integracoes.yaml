@@ -3,7 +3,7 @@ descricao: Enviar os seus imóveis para os portais, trazer os imóveis das const
 ordem: 6
 quem: [gestor]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
-# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+# (opcional); `video` é o slug em src/content/videos (sem ele, a aula fica fora do site até ter vídeo).
 aulas:
   - slug: enviar-imoveis-para-portais
     titulo: "Enviar imóveis para portais imobiliários"

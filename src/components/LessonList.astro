@@ -1,5 +1,5 @@
 ---
-// Lista de aulas de um módulo: número, título, frase e o estado do vídeo.
+// Lista de aulas de um módulo: número, título, frase e a duração do vídeo.
 // O estado "concluída" vem do script de progresso (data-done).
 import Icon from "./Icon.astro";
 import type { Lesson } from "../lib/treinamento";
@@ -24,11 +24,7 @@ const { lessons } = Astro.props;
           {lesson.description && <span class="eu-lessons__desc">{lesson.description}</span>}
         </span>
         <span class="eu-lessons__time">
-          {lesson.video ? (
-            <span class="eu-chip eu-chip--video"><Icon name="play" size={14} />{lesson.video.duracao}</span>
-          ) : (
-            <span class="eu-chip">Vídeo em breve</span>
-          )}
+          <span class="eu-chip eu-chip--video"><Icon name="play" size={14} />{lesson.video.duracao}</span>
         </span>
         <span class="sr-only eu-lessons__sr-done">, concluída</span>
       </a>

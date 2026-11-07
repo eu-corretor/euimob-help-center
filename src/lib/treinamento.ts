@@ -1,6 +1,8 @@
 // O Treinamento: o curso em vídeo da plataforma, separado dos guias.
 // Módulos em src/content/treinamento/*.yaml; cada aula tem página própria em
 // /treinamento/<módulo>/<aula>/. Um guia só aponta para a aula (lessonForGuide).
+// Só entra no site a aula com `video`; o módulo sem nenhuma aula com vídeo fica
+// de fora. As demais continuam nos YAMLs e aparecem quando ganharem vídeo.
 import { getCollection, getEntry } from "astro:content";
 
 import { hrefOf } from "./guides";
@@ -17,7 +19,7 @@ export interface Lesson {
   title: string;
   description: string;
   href: string;
-  video: LessonVideo | null;
+  video: LessonVideo;
   guide: { id: string; title: string; href: string } | null;
 }
 
@@ -36,11 +38,12 @@ let cache: Promise<Module[]> | undefined;
 
 async function load(): Promise<Module[]> {
   const entries = (await getCollection("treinamento")).sort((a, b) => a.data.ordem - b.data.ordem);
-  return Promise.all(
-    entries.map(async (entry, i) => {
+  const modules = await Promise.all(
+    entries.map(async (entry) => {
       const slug = entry.id.replace(/^\d+-/, "");
+      // Valida todas as aulas, mesmo as ainda sem vídeo, e só depois filtra.
       const lessons = await Promise.all(
-        entry.data.aulas.map(async (aula): Promise<Lesson> => {
+        entry.data.aulas.map(async (aula) => {
           let guide: Lesson["guide"] = null;
           if (aula.guia) {
             const doc = await getEntry("docs", aula.guia);
@@ -79,16 +82,16 @@ async function load(): Promise<Module[]> {
       }
       return {
         slug,
-        number: i + 1,
         titulo: entry.data.titulo,
         descricao: entry.data.descricao,
         quem: entry.data.quem,
         opcional: entry.data.opcional,
         href: `/treinamento/${slug}/`,
-        lessons,
+        lessons: lessons.filter((l): l is Lesson => l.video !== null),
       };
     })
   );
+  return modules.filter((m) => m.lessons.length > 0).map((m, i) => ({ ...m, number: i + 1 }));
 }
 
 export function getModules(): Promise<Module[]> {
@@ -159,12 +162,10 @@ export const QUEM_LABEL: Record<string, string> = {
 
 const toSeconds = (t: string) => t.split(":").reduce((acc, part) => acc * 60 + Number(part), 0);
 
-/** Duração somada dos vídeos já publicados, como "12 min", ou null se nenhum. */
+/** Duração somada dos vídeos das aulas, como "12 min", ou null se for zero. */
 export function totalDuration(lessons: Lesson[]): string | null {
-  const seconds = lessons.reduce((sum, l) => sum + (l.video ? toSeconds(l.video.duracao) : 0), 0);
+  const seconds = lessons.reduce((sum, l) => sum + toSeconds(l.video.duracao), 0);
   if (!seconds) return null;
   const minutes = Math.max(1, Math.round(seconds / 60));
   return minutes < 60 ? `${minutes} min` : `${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} min`;
 }
-
-export const videoCount = (lessons: Lesson[]) => lessons.filter((l) => l.video).length;
