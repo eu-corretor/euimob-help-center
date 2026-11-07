@@ -3,7 +3,7 @@ descricao: Levar os imóveis para o site e para o Facebook e o Instagram.
 ordem: 5
 quem: [gestor, corretor]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
-# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+# (opcional); `video` é o slug em src/content/videos (sem ele, a aula fica fora do site até ter vídeo).
 aulas:
   - slug: ligar-ou-desligar-o-chat-do-site
     titulo: "Ligar ou desligar o chat do site"

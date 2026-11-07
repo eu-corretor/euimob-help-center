@@ -3,7 +3,7 @@ descricao: Montar a equipe e saber onde pedir ajuda dentro do sistema.
 ordem: 1
 quem: [gestor]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
-# (opcional); `video` é o slug em src/content/videos (sem ele: "vídeo em breve").
+# (opcional); `video` é o slug em src/content/videos (sem ele, a aula fica fora do site até ter vídeo).
 aulas:
   - slug: convidar-um-usuario
     titulo: "Convidar um usuário"
