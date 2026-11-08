@@ -2,7 +2,9 @@
 //   public/corpus/manual.md     — o que a Clara lê (guias + capítulos de vídeo)
 //   public/corpus/manifest.json — hash e contagens, para o cache do cron
 //   public/index.json           — path da ação Odoo → guias, para o botão "?"
-// Roda antes do `astro build` (ver package.json). Rascunhos ficam de fora.
+//   public/novidades.json       — as novidades, para o aviso dentro do sistema
+// Roda antes do `astro build` (ver package.json). Rascunhos ficam de fora, e
+// as novidades nunca entram no corpus da Clara nem no index.json.
 import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, sep } from "node:path";
@@ -16,6 +18,10 @@ const DOCS_DIR = "src/content/docs";
 const VIDEOS_DIR = "src/content/videos";
 const OUT_CORPUS = "public/corpus";
 const OUT_INDEX = "public/index.json";
+const NEWS_DIR = "novidades";
+const OUT_NEWS = "public/novidades.json";
+const NEWS_LIMIT = 20;
+const NEWS_SUMMARY_MAX = 200;
 const SEPARATOR = "=====";
 
 function walk(dir) {
@@ -55,8 +61,11 @@ function loadGuides(videos) {
         throw new Error(`${file}: vídeo "${data.video}" não existe em ${VIDEOS_DIR}`);
       }
       return {
+        file,
         slug,
         title: data.title,
+        resumo: data.resumo,
+        publicado_em: data.publicado_em,
         secao: data.secao ?? slug.split("/")[0],
         telas: data.telas ?? [],
         quem: data.quem ?? [],
@@ -114,8 +123,46 @@ function buildIndex(guides) {
   return index;
 }
 
+const isNews = (g) => g.slug.split("/")[0] === NEWS_DIR;
+
+// Segundos em UTC, sem milissegundos: o sistema compara a data em segundos com
+// a marca "vistas até" de cada usuário.
+function toContractDate(value) {
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().replace(/\.\d{3}Z$/, "Z");
+}
+
+function checkNews(item) {
+  const problems = [
+    !item.title && "sem title",
+    !item.resumo && "sem resumo",
+    item.resumo?.length > NEWS_SUMMARY_MAX && `resumo acima de ${NEWS_SUMMARY_MAX} caracteres`,
+    !toContractDate(item.publicado_em ?? "") && "sem publicado_em válido",
+  ].filter(Boolean);
+  if (problems.length) {
+    throw new Error(`${item.file}: novidade ${problems.join(", ")}`);
+  }
+}
+
+function buildNews(news) {
+  news.forEach(checkNews);
+  return news
+    .map((n) => ({
+      slug: n.slug,
+      titulo: n.title,
+      resumo: n.resumo.trim(),
+      publicado_em: toContractDate(n.publicado_em),
+      url: n.url,
+    }))
+    .sort((a, b) => b.publicado_em.localeCompare(a.publicado_em))
+    .slice(0, NEWS_LIMIT);
+}
+
 const videos = loadVideos();
-const guides = loadGuides(videos);
+const pages = loadGuides(videos);
+const news = pages.filter((p) => isNews(p) && p.slug !== NEWS_DIR);
+const guides = pages.filter((p) => !isNews(p));
 const manual = guides.map(renderGuide).join("\n\n");
 const hash = createHash("sha256").update(manual).digest("hex");
 
@@ -136,5 +183,10 @@ writeFileSync(
   ) + "\n"
 );
 writeFileSync(OUT_INDEX, JSON.stringify(buildIndex(guides), null, 2) + "\n");
+const newsFeed = buildNews(news);
+writeFileSync(OUT_NEWS, JSON.stringify(newsFeed, null, 2) + "\n");
 
-console.log(`corpus: ${guides.length} guias, ${Object.keys(videos).length} vídeos, hash ${hash.slice(0, 12)}`);
+console.log(
+  `corpus: ${guides.length} guias, ${Object.keys(videos).length} vídeos, ` +
+    `${newsFeed.length} novidades, hash ${hash.slice(0, 12)}`
+);

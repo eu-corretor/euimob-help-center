@@ -10,16 +10,19 @@ para responder dúvidas de uso.
 | Peça | Onde | O que faz |
 | --- | --- | --- |
 | Guias | `src/content/docs/<seção>/<guia>.md` | Um guia = uma tarefa. Markdown com cabeçalho (`title`, `telas`, `quem`, `video`, `verificado_em`). |
+| Novidades | `src/content/docs/novidades/<aaaa-mm-dd>-<slug>.md` | Um lançamento = uma página, com `title`, `resumo` (até 200 caracteres) e `publicado_em`. Lista pública em `/novidades/`; o sistema mostra as não vistas no aviso de Novidades. |
 | Vídeos | `src/content/videos/<slug>.yaml` | ID do YouTube, duração e **capítulos** (`mm:ss — assunto`). O guia cita o vídeo pelo `slug`. |
 | Transcrições | `src/content/transcricoes/<slug>.md` | Transcrição com timestamps. Entra na busca do site, não no prompt da Clara. |
 | Site | Astro Starlight | Busca offline, tema da marca, player com capítulos, `?t=<segundos>` abre o vídeo no ponto certo. |
-| Editor | `/admin` (Sveltia CMS) | Quem escreve loga com o GitHub, edita numa tela visual e publica. Rascunho → Em revisão → Publicado. |
-| Corpus | `scripts/build-corpus.mjs` | No build, gera `corpus/manual.md` (guias + capítulos, para a Clara), `corpus/manifest.json` (hash) e `index.json` (tela → guias, para o botão "?" do sistema). |
+| Corpus | `scripts/build-corpus.mjs` | No build, gera `corpus/manual.md` (guias + capítulos, para a Clara), `corpus/manifest.json` (hash) e `index.json` (tela → guias, para o botão "?" do sistema) e `novidades.json` (as 20 mais recentes, para o aviso de Novidades). |
 | Deploy | Cloudflare Workers (Workers Builds) | Push na `main` roda `npm run build` e `npx wrangler deploy`; o `wrangler.jsonc` publica `dist/` como site estático. Branches que não são a `main` geram versão de prévia. |
 
 Regras de escrita em [`interno/guia-de-estilo.md`](interno/guia-de-estilo.md),
-de gravação em [`interno/guia-de-gravacao.md`](interno/guia-de-gravacao.md),
-do editor em [`interno/como-usar-o-editor.md`](interno/como-usar-o-editor.md).
+de gravação em [`interno/guia-de-gravacao.md`](interno/guia-de-gravacao.md).
+Guias e novidades são editados direto no repositório, por pull request. O editor
+visual (Sveltia CMS em `/admin`) foi desligado em 08/11/2026 por falta de uso;
+para religar, recupere `public/admin/` e `interno/como-usar-o-editor.md` do
+histórico do git.
 
 ## Rodar localmente
 
@@ -40,7 +43,6 @@ src/content/videos/      metadados dos vídeos (YouTube, capítulos)
 src/content/transcricoes/
 src/components/          Video.astro e as sobrescritas do Starlight (título com vídeo, rodapé "Revisado em")
 src/pages/interno/       /interno/desatualizados — guias e vídeos com mais de 6 meses
-public/admin/            o editor (Sveltia CMS) e a configuração das coleções
 public/_headers          cabeçalhos de segurança, CSP do editor, CORS do corpus e do index.json
 wrangler.jsonc           deploy na Cloudflare: dist/ como assets estáticos
 scripts/build-corpus.mjs

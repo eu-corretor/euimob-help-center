@@ -26,7 +26,7 @@ Um guia = uma tarefa, escrito com os nomes exatos da tela, com caminho no menu e
 
 ## Operating Context
 
-- Guias em Markdown (`src/content/docs/<seção>/`), editados no Sveltia CMS (`/admin`) com fluxo Rascunho → Em revisão → Publicado.
+- Guias em Markdown (`src/content/docs/<seção>/`), editados no repositório por pull request (o editor visual em `/admin` está desligado).
 - Vídeos no YouTube (não listados), registrados em `src/content/videos/<slug>.yaml` com capítulos; ainda nenhum publicado.
 - Treinamento (`/treinamento`): curso em vídeo **separado dos guias**. Módulos em `src/content/treinamento/*.yaml`; cada aula tem página própria (`/treinamento/<módulo>/<aula>/`), com `video:` (sem ele, a aula fica fora do site até ter vídeo, e o módulo sem nenhuma aula com vídeo também) e `guia:` opcional apontando para o guia escrito relacionado. O guia só mostra um link para a aula; ele não vira aula.
 - Deploy estático na Cloudflare.

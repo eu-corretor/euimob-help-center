@@ -8,6 +8,7 @@ npm-debug.log*
 # Gerados no build a partir de src/content (nunca editar à mão)
 public/corpus/
 public/index.json
+public/novidades.json
 .wrangler/
 
 # Rascunho da skill de design (prints, mockups, brief); não faz parte do site
