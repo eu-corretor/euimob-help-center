@@ -59,3 +59,21 @@ uma tela.
 Só quando o texto não basta. Sempre do tenant de demonstração (ver
 `guia-de-gravacao.md`), em `public/imagens/<secao>/<guia>-<n>.png`, largura
 máxima 1600 px, sem dado real.
+
+## Novidades
+
+Cada novidade é uma página em `src/content/docs/novidades/`. O sistema mostra as não vistas no aviso de
+**Novidades**, ao lado do botão "?", e a lista completa fica em `/novidades/`.
+
+- O nome é sempre **Novidades**.
+- O **resumo** é texto puro, uma ou duas frases, dito pelo que a pessoa passa a
+  conseguir fazer. É ele que aparece dentro do sistema.
+- A novidade **aponta para o guia**, não o substitui: conta o que mudou e por
+  quê, e termina com o link do guia que ensina a usar.
+- Novidade de adicional contratado à parte diz isso no resumo ("Para quem tem o
+  WhatsApp contratado: ...").
+- Publique **só depois** do deploy do sistema. Engano se corrige despublicando
+  (o cache é de 5 minutos).
+- `publicado_em` é a data do anúncio e não se altera depois: adiantá-la faria o
+  aviso reaparecer para quem já viu.
+- Novidade não entra no que a Clara lê nem no botão "?".

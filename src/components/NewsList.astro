@@ -1,0 +1,36 @@
+---
+// Lista pública das novidades (/novidades/): data, título e resumo, da mais
+// recente para a mais antiga. A mesma pasta gera o novidades.json que o
+// sistema lê (scripts/build-corpus.mjs).
+import { getCollection } from "astro:content";
+
+const DATE = new Intl.DateTimeFormat("pt-BR", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "America/Sao_Paulo",
+});
+
+const news = (
+  await getCollection(
+    "docs",
+    (d) => d.id.startsWith("novidades/") && !d.data.draft && Boolean(d.data.publicado_em)
+  )
+).sort((a, b) => b.data.publicado_em!.getTime() - a.data.publicado_em!.getTime());
+---
+
+{
+  news.length === 0 ? (
+    <p>Nenhuma novidade publicada ainda.</p>
+  ) : (
+    <ol class="eu-news not-content">
+      {news.map((n) => (
+        <li class="eu-news__item">
+          <time datetime={n.data.publicado_em!.toISOString()}>{DATE.format(n.data.publicado_em!)}</time>
+          <a href={`/${n.id}/`}>{n.data.title}</a>
+          <p>{n.data.resumo}</p>
+        </li>
+      ))}
+    </ol>
+  )
+}

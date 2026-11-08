@@ -35,10 +35,12 @@ const sidebarOrder = (a: Guide, b: Guide) =>
   (a.data.sidebar?.order ?? 999) - (b.data.sidebar?.order ?? 999) ||
   a.data.title.localeCompare(b.data.title, "pt-BR");
 
-/** Guias publicados de todas as seções de funcionalidade (sem trilhas nem FAQ). */
+const NOT_GUIDE_SECTIONS = new Set(["trilhas", "novidades"]);
+
+/** Guias publicados de todas as seções de funcionalidade (sem trilhas, FAQ nem novidades). */
 export async function getGuides(): Promise<Guide[]> {
   const docs = await getCollection("docs", isGuide);
-  return docs.filter((g) => sectionOf(g) !== "trilhas").sort(sidebarOrder);
+  return docs.filter((g) => !NOT_GUIDE_SECTIONS.has(sectionOf(g))).sort(sidebarOrder);
 }
 
 export interface Section {

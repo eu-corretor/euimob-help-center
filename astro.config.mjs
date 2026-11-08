@@ -29,6 +29,8 @@ export default defineConfig({
         Footer: "./src/components/overrides/Footer.astro",
       },
       sidebar: [
+        // Um link só: as novidades não ganham autogenerate da pasta.
+        { label: "Novidades", link: "/novidades/" },
         ...SECTIONS.map(({ directory, label }) => ({
           label,
           collapsed: directory !== "trilhas",
@@ -38,9 +40,6 @@ export default defineConfig({
       ],
       pagination: true,
       lastUpdated: false,
-      editLink: {
-        baseUrl: "https://github.com/eu-corretor/euimob-help-center/edit/main/",
-      },
       credits: false,
     }),
   ],

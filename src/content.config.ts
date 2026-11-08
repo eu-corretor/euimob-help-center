@@ -14,6 +14,10 @@ export const guideFields = z.object({
   verificado_em: z.coerce.date().optional(),
   versao_sistema: z.string().optional(),
   trilha: z.boolean().default(false),
+  // Só das novidades (src/content/docs/novidades/). Opcionais porque o esquema
+  // é o mesmo dos guias; quem exige os dois numa novidade é o build-corpus.
+  resumo: z.string().max(200).optional(),
+  publicado_em: z.coerce.date().optional(),
 });
 
 export const collections = {
