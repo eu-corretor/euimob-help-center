@@ -1,8 +1,7 @@
 ---
 title: "Conecte o Eu Imob à sua IA favorita"
 resumo: "Ligue o Eu Imob ao Claude ou ao ChatGPT e peça pela conversa: ver os leads da semana, cadastrar um contato, agendar uma visita. Sem abrir o sistema."
-publicado_em: 2026-11-08T12:00:00-03:00
-draft: true
+publicado_em: 2026-11-08T18:13:00-03:00
 ---
 
 Se você já usa o Claude ou o ChatGPT no dia a dia, agora ele pode trabalhar
