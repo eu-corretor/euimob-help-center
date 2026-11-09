@@ -1,10 +1,50 @@
 titulo: Site e redes sociais
-descricao: Levar os imóveis para o site e para o Facebook e o Instagram.
+descricao: Criar e personalizar o site da imobiliária e levar os imóveis para o Facebook e o Instagram.
 ordem: 5
 quem: [gestor, corretor]
 # Cada aula é um vídeo do Treinamento. `guia` é o guia escrito relacionado
 # (opcional); `video` é o slug em src/content/videos (sem ele, a aula fica fora do site até ter vídeo).
 aulas:
+  - slug: criar-o-site
+    titulo: "Criar o site da imobiliária"
+    descricao: "Em Configurações > Site, dar nome ao site, escolher o logotipo e as cores e o template, Padrão ou Lumina. O site nasce com conteúdo inicial para você editar."
+    video: site-criar-site
+  - slug: editar-secoes-e-capa
+    titulo: "Editar as seções e a capa do site"
+    descricao: "Abrir o editor, escolher qual site editar, mover, duplicar ou excluir seções e trocar a imagem da capa, inclusive por uma do banco de imagens gratuito."
+    video: site-editar-capa
+  - slug: menu-superior-do-site
+    titulo: "Configurar o menu superior"
+    descricao: "Escolher e ordenar as páginas do menu, ajustar o tamanho da logo, a posição do cabeçalho, a cor do texto e a sombra."
+    video: site-menu-superior
+  - slug: campos-de-busca-do-site
+    titulo: "Escolher os campos de busca"
+    descricao: "Ligar ou desligar os filtros da busca de imóveis do site, como negócio, tipo, cidade, bairro, preço, quartos e código, e deixar o fundo transparente."
+    video: site-campos-de-busca
+  - slug: secoes-de-imoveis-no-site
+    titulo: "Adicionar seções de imóveis"
+    descricao: "Incluir no site novas vitrines de imóveis, como super destaque, aluguel ou temporada, além das seções que já vêm prontas."
+    video: site-secoes-de-imoveis
+  - slug: secao-de-conteudo-no-site
+    titulo: "Inserir uma seção de conteúdo"
+    descricao: "Criar seções com texto, colunas, imagens, corretores ou formulário de captação de leads, trocar a imagem, editar texto e botão e mudar o fundo."
+    video: site-secao-de-conteudo
+  - slug: nova-pagina-no-site
+    titulo: "Criar uma nova página"
+    descricao: "Criar uma página como Sobre nós, a partir de um modelo ou em branco, escolher se ela aparece no menu e montar o conteúdo com blocos."
+    video: site-nova-pagina
+  - slug: cores-do-site
+    titulo: "Alterar as cores do site"
+    descricao: "Mudar a cor principal e a secundária, o fundo de cada seção com os pré-ajustes de cor e as cores dos textos, links e botões."
+    video: site-cores
+  - slug: rodape-do-site
+    titulo: "Configurar o rodapé"
+    descricao: "Escolher o modelo do rodapé, preencher os links das redes sociais e ajustar o estilo dos ícones. Endereço, telefones e e-mails vêm das configurações gerais."
+    video: site-rodape
+  - slug: estilo-de-cards-e-botoes
+    titulo: "Alterar o estilo de cards e botões"
+    descricao: "Na aba Tema, ajustar o tamanho das fontes e deixar arredondados ou quadrados os campos de busca, os cards, as fotos e os botões."
+    video: site-estilo-cards-e-botoes
   - slug: ligar-ou-desligar-o-chat-do-site
     titulo: "Ligar ou desligar o chat do site"
     descricao: "Como ligar ou desligar, site a site, o chat em que o assistente virtual atende os visitantes."

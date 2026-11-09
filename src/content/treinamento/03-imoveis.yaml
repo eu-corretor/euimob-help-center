@@ -61,6 +61,11 @@ aulas:
     descricao: "Incluir uma comodidade que não está na lista que o corretor marca na ficha do imóvel."
     guia: imoveis/cadastros-auxiliares
     video: imoveis-comodidades-personalizadas
+  - slug: marca-dagua-nas-fotos
+    titulo: "Marca d'água nas fotos dos imóveis"
+    descricao: "Escolher a imagem da marca d'água (de preferência um PNG com fundo transparente), decidir se ela já vem ligada nos imóveis novos e ajustar o tamanho e a transparência."
+    guia: imoveis/configuracoes-de-imoveis
+    video: imoveis-marca-dagua
   - slug: configuracoes-de-imoveis
     titulo: "Configurações de Imóveis: marca d'água e imóveis próximos"
     descricao: "Escolher o logo da marca d'água, o tamanho e a transparência, se ela vem ligada nos imóveis novos, e o raio dos imóveis próximos."
