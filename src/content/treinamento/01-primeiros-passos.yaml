@@ -9,6 +9,14 @@ aulas:
     titulo: "Convidar um usuário"
     descricao: "Como criar o acesso de uma pessoa da equipe, escolher os papéis e exigir a verificação em duas etapas."
     guia: conta/convidar-um-usuario
+  - slug: cadastrar-um-membro-da-equipe
+    titulo: "Cadastrar um membro da equipe"
+    descricao: "Cadastrar a pessoa em Equipe com nome e e-mail, escolher se ela aparece no site e aplicar um perfil de acesso. Ela recebe um e-mail para criar a senha."
+    video: equipe-cadastrar-membro
+  - slug: criar-e-aplicar-um-perfil-de-acesso
+    titulo: "Criar e aplicar um perfil de acesso"
+    descricao: "Montar um perfil com as funcionalidades e o nível de cada uma, como um só para cadastro de imóveis, e aplicá-lo a um membro da equipe."
+    video: equipe-perfil-de-acesso
   - slug: tirar-duvidas-com-a-clara
     titulo: "Tirar dúvidas com a Clara"
     descricao: "Como conversar com a Clara no Discuss para tirar dúvidas de uso e consultar os seus dados."
