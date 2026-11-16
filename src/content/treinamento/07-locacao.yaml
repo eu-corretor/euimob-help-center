@@ -22,10 +22,25 @@ aulas:
     titulo: "Gerar o contrato a partir da oportunidade"
     descricao: "Como transformar a oportunidade de locação num contrato em rascunho e preencher as abas do contrato antes da assinatura."
     guia: locacao/gerar-o-contrato-a-partir-da-oportunidade
+  - slug: cadastrar-contrato
+    titulo: "Cadastrar um contrato de locação"
+    descricao: "Lançar um contrato pelo botão Novo em Locação → Contratos: partes, vigência, padrão de contrato, aluguel e taxas, rubricas como o IPTU, proprietário, garantias e ocupantes."
+    guia: locacao/gerar-o-contrato-a-partir-da-oportunidade
+    video: locacao-cadastrar-contrato
+  - slug: faturamento-do-contrato
+    titulo: "Faturamento do contrato: vencimento, cobrança, encargos, repasse e reajuste"
+    descricao: "A aba Faturamento campo a campo: recorrência, pré ou pós-pago, vencimento e antecedência, primeira e última competência, formas de cobrança, régua, multa e juros, DIMOB, dia do repasse, repasse garantido e índice de reajuste."
+    guia: locacao/gerar-o-contrato-a-partir-da-oportunidade
+    video: locacao-faturamento-do-contrato
   - slug: enviar-para-assinatura-e-ativar
     titulo: "Enviar o contrato para assinatura e ativar"
     descricao: "Como mandar o contrato para assinatura eletrônica, acompanhar quem já assinou e ativar a locação para começar a faturar."
     guia: locacao/enviar-para-assinatura-e-ativar
+  - slug: ativar-contrato-e-gerar-fatura
+    titulo: "Ativar o contrato e gerar a fatura"
+    descricao: "Ativar o contrato para as faturas saírem todo mês sozinhas, gerar uma fatura à mão e ver a cobrança e o link de pagamento quando há integração com o Asaas."
+    guia: locacao/enviar-para-assinatura-e-ativar
+    video: locacao-ativar-contrato
   - slug: faturas-mensais
     titulo: "Faturas mensais: gerar, conferir e pausar a cobrança"
     descricao: "Como as faturas de aluguel nascem, o que conferir todo mês, como antecipar uma fatura e como pausar a régua de cobrança de um locatário em negociação."
@@ -62,3 +77,13 @@ aulas:
     titulo: "O painel de locação"
     descricao: "O que cada bloco do painel mostra, de onde vem cada número e como chegar à lista por trás de um indicador."
     guia: locacao/o-painel-de-locacao
+  - slug: padroes-de-contrato
+    titulo: "Padrões de contrato"
+    descricao: "Montar padrões (residencial, comercial, temporada ou de um cliente) com taxas, competências, encargos, vencimento e reajuste, que o contrato novo puxa e você ainda pode mudar nele."
+    guia: locacao/cadastrar-proprietario-e-padroes-de-contrato
+    video: locacao-padroes-de-contrato
+  - slug: regua-de-cobranca-padrao
+    titulo: "Régua de cobrança: ajustar os avisos"
+    descricao: "Em Locação → Cadastros → Régua de cobrança: os avisos da régua padrão (3 dias antes, no dia, 1, 7 e 15 dias depois), o modelo de e-mail de cada um, e como mudar, incluir ou tirar avisos."
+    guia: locacao/regua-de-cobranca
+    video: locacao-regua-de-cobranca
