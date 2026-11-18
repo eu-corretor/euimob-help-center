@@ -7,7 +7,8 @@ quem: [gestor]
 aulas:
   - slug: enviar-imoveis-para-portais
     titulo: "Enviar imóveis para portais imobiliários"
-    descricao: "Criar a integração com o portal, escolher o que enviar e receber os leads no CRM. Copie os links do XML e de leads só depois de salvar: eles mudam ao salvar."
+    descricao: "Criar a integração com o portal, escolher o que enviar e receber os leads no CRM. Copie o link do XML só depois de salvar: ele muda ao salvar. Os leads do VivaReal, ZAP e OLX chegam sem link nenhum; o Chaves na Mão pede o token de leads da sua conta."
+    guia: integracoes/portais-imobiliarios
     video: integracoes-portais-imobiliarios
   - slug: trazer-imoveis-de-construtoras
     titulo: "Trazer imóveis de construtoras"

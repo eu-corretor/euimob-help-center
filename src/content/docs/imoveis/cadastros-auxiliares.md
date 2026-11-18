@@ -79,6 +79,22 @@ esse.
 Na lista de Tipos de Imóvel, o filtro **Tipos da Imobiliária** mostra só os
 que você criou.
 
+## Nomes nos portais
+
+Os portais só aceitam comodidades e itens de condomínio da lista deles. Por
+isso, em **Comodidades** e **Condomínio** cada item tem duas colunas a mais:
+
+- **Nome Integração ZAP**: o nome do item no VivaReal / ZAP
+- **Nome Integração Chaves na Mão**: o nome do item no Chaves na Mão
+
+Quando você cria um item, o sistema já preenche o nome do Chaves na Mão se
+achar um igual na lista do portal (sem diferença de acento ou de maiúscula).
+Para um nome diferente do portal, como *Churrasqueira gourmet*, digite você
+mesmo o nome equivalente. O sistema nunca troca o que você digitou.
+
+Um item sem **Nome Integração Chaves na Mão** não vai para o Chaves na Mão. O
+imóvel é enviado normalmente, só sem esse item.
+
 ## Caminhos relacionados
 
 | Para quê | Caminho |
