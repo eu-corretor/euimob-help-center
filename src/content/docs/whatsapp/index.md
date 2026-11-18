@@ -1,16 +1,22 @@
 ---
 title: "WhatsApp"
-description: "Número próprio ou API oficial: qual usar e como conectar."
+description: "As conversas de WhatsApp dentro do sistema, pelo número do próprio corretor."
 secao: whatsapp
 telas: []
-quem: []
-draft: true
+quem: [corretor, gestor]
+verificado_em: 2026-11-18
+versao_sistema: "19.0-2026.11"
 sidebar:
   order: 0
   label: Visão geral
 ---
 
-Número próprio ou API oficial: qual usar e como conectar.
+Com o WhatsApp ligado ao Eu Imob, as conversas chegam ao sistema e as
+respostas saem do número conectado. O celular continua funcionando
+normalmente.
 
-> Página de visão geral da seção. Quando o vídeo de visão geral do módulo for
-> gravado, ele entra aqui pelo campo `video`, e o `draft` sai.
+## O que dá para fazer
+
+| Para quê | Guia |
+| --- | --- |
+| Ligar o WhatsApp do corretor pelo QR Code e reconectar quando cair | [Conectar o WhatsApp do corretor](/whatsapp/conectar-numero-proprio/) |
