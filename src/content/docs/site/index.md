@@ -1,16 +1,23 @@
 ---
 title: "Site"
-description: "Seu site de imóveis em 15 minutos."
+description: "O site de imóveis da imobiliária: criar, personalizar e atender os visitantes pelo chat."
 secao: site
 telas: []
-quem: []
-draft: true
+quem: [gestor]
+verificado_em: 2026-11-18
+versao_sistema: "19.0-2026.11"
 sidebar:
   order: 0
   label: Visão geral
 ---
 
-Seu site de imóveis em 15 minutos.
+O site mostra os imóveis publicados da imobiliária e se atualiza sozinho
+quando um imóvel muda. Os contatos que chegam por ele entram no CRM.
 
-> Página de visão geral da seção. Quando o vídeo de visão geral do módulo for
-> gravado, ele entra aqui pelo campo `video`, e o `draft` sai.
+## O que dá para fazer
+
+| Para quê | Onde aprender |
+| --- | --- |
+| Criar o site, a capa, o menu, as cores e as páginas | [Treinamento de Site e redes sociais](/treinamento/divulgacao/) (vídeos) |
+| Ligar ou desligar o chat em que o assistente virtual atende os visitantes | [Ligar ou desligar o chat do site](/site/ligar-ou-desligar-o-chat-do-site/) |
+| Ver o anúncio de um imóvel como o cliente vai ver | [Pré-visualizar o anúncio no site](/imoveis/pre-visualizar-o-anuncio/) |
