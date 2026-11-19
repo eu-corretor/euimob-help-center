@@ -53,6 +53,33 @@ as unidades ligadas e o status de cada uma.
 > Na aba Imóveis do condomínio, **Adicionar uma linha** cria um imóvel novo.
 > Para ligar um imóvel que já existe, use a ficha do imóvel.
 
+## Publicar o condomínio no site
+
+Todo condomínio nasce como **Rascunho** e só aparece no site depois de
+publicado.
+
+1. Abra o condomínio (Imóveis → Imóveis → Condomínios)
+2. Confira se ele tem ao menos uma foto e a cidade no endereço
+3. Clique em **Publicar**, no alto da ficha
+
+Para tirar o condomínio do site, clique em **Voltar para rascunho**.
+
+## O que a plataforma faz sozinha
+
+- Com o condomínio publicado, ele entra na página **Condomínios** do site, com
+  as unidades publicadas ligadas a ele.
+- A página de cada unidade ligada passa a mostrar o nome do condomínio, com
+  link para a página dele.
+- Publicar e voltar para rascunho ficam registrados no histórico da ficha.
+
+## Se der errado
+
+| Mensagem | O que fazer |
+| --- | --- |
+| *Favor preencher antes de publicar: ao menos uma foto* | Na aba Fotos, clique em **Adicionar Fotos**, salve e publique de novo |
+| *Favor preencher antes de publicar: a cidade* | Em **Endereço**, digite o CEP ou escolha a cidade, salve e publique de novo |
+| O condomínio não aparece no site | Confira se o status no alto da ficha é **Publicado** |
+
 ## Caminhos relacionados
 
 | Para quê | Caminho |
